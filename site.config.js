@@ -9,8 +9,8 @@ module.exports = {
   googlead: null,
 
   // basic site info (required)
-  name: 'Meng',
-  domain: 'Menging1122.github.io',
+  name: 'Junjie Zhou',
+  domain: 'junjiezhou1122.github.io',
   author: 'Junjie Zhou',
 
   // open graph metadata (optional)
