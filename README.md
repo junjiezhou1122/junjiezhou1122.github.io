@@ -5,13 +5,7 @@
   <title>CodePen -  “My Interests” Web </title>
   
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<html>
-  <head>
-    <title> Junjie Zhou's blog </title>
-  </head>
+
   <body>
     <div>
       <h1> Junjie Zhou's blog </h1>
