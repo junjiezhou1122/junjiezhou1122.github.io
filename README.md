@@ -5,7 +5,8 @@
   <body>
     <div>
       <h1> Junjie Zhou's blog </h1>
-      <p> <em><b>Welcome to my blog! </b></em>Recently, I am trying to balance my learning and life. In there, I will share many intersting things. Hope you can enjoy it!</p>
+      <img src = "https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/VC_SpotlightBerkeley_Hero_Stock_RF_149303390_1280x640.jpg">
+      <p> <em><b>Welcome to my blog! </b></em>Recently, I am trying to balance my learning and life. In there, I will share many intersting things.If you want to see more about me, this is my  <a href= "https://junjiezhou.notion.site/" target="_blank"> Notion </a>. Hope you can enjoy it!</p>
     </div>
     <div>
       <h2> ABout My Learning </h2>
