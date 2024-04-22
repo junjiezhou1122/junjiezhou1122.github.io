@@ -16,4 +16,20 @@
       <h2> About My Life </h2>
       <p> ...... </p>
   </div>
-    
+    <div>
+      <h2> Resources </h2>
+      <ul>
+        <li> <a href= "https://ocw.mit.edu/"> MIT OpenCourseWare </a> </li>
+        <li> <a href = "https://hkn.eecs.berkeley.edu/courseguides"> Berkely Course Guides </a> </li>
+        <li> <em><b>Pionner</b></em>
+      <table>
+        <tr>
+          <th> Name </th>
+          <th> Tag </th>
+          <th> Web </th>
+        </tr>
+        <tr>
+          <td> Andy Matuschak </td>
+          <td> Thoughts </td>
+          <td> <a href= "https://andymatuschak.org/"> andymatuschak.org </a> </td> </ls></ul>
+          
