@@ -1,4 +1,16 @@
 <html>
+  <style>
+    .blog-title{
+  color: orange;
+}
+h2 {
+  
+  color: SkyBlue;
+}
+body{
+  background-color: FloralWhite;
+}
+  </style>
   <head>
     <title> Junjie Zhou's Blog </title>
   </head>
