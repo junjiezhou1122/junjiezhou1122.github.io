@@ -1,15 +1,28 @@
 <html>
   <style>
+    /* Use a more neutral color for the blog title to make it less stark */
     .blog-title{
-  color: orange;
-}
-h2 {
-  
-  color: DimGrey;
-}
-body{
-  background-color: FloralWhite;
-}
+      color: #6D4C41; /* A warm brown tone */
+    }
+    /* Keep headings a soft gray to reduce harshness */
+    h2 {
+      color: #757575; /* A mid-tone gray */
+    }
+    /* Maintain a light and clean background color */
+    body{
+      background-color: #FFF8E1; /* A very light yellow, reminiscent of parchment */
+      color: #424242; /* A dark gray for body text to ensure good readability */
+      font-family: 'Arial', sans-serif; /* A clean and simple font for readability */
+    }
+    /* Styling for links to make them stand out a bit */
+    a {
+      color: #1A237E; /* A deep indigo, for a pop of color */
+    }
+    /* Styling for table headers to keep them subtle */
+    th {
+      background-color: #CFD8DC; /* A light blue-gray */
+      color: #263238; /* A dark gray for contrast */
+    }
   </style>
   <head>
     <title> Junjie Zhou's Blog </title>
