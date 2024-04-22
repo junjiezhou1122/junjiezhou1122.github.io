@@ -12,7 +12,7 @@ body{
 }
   </style>
   <head>
-    <title> Junjie Zhou's Blog </title>
+    <title  class="blog-title> Junjie Zhou's Blog </title>
   </head>
   <body>
     <div>
