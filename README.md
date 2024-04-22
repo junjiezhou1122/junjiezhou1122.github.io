@@ -17,7 +17,7 @@
       <p> ...... </p>
   </div>
     <div>
-      <h2> Resources </h2>
+      <h2> Recommend Resources </h2>
       <ul>
         <li> <a href= "https://ocw.mit.edu/"> MIT OpenCourseWare </a> </li>
         <li> <a href = "https://hkn.eecs.berkeley.edu/courseguides"> Berkely Course Guides </a> </li>
