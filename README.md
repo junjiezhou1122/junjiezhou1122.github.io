@@ -11,10 +11,11 @@ h2 {
 body{
   background-color: FloralWhite;
 }
-p {
+p,li {
   font-family: 'Architects Daughter', cursive;
   font-size: 18px;
 }
+
   </style>
     <title> Junjie Zhou's Blog </title>
   </head>
