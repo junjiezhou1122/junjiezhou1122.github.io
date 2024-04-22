@@ -3,6 +3,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link hre="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
      <style>
 h2 {
   color: DimGrey;
@@ -12,7 +13,7 @@ body{
   background-color: FloralWhite;
 }
 p,li {
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 
