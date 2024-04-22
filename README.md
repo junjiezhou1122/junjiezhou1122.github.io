@@ -31,5 +31,8 @@
         <tr>
           <td> Andy Matuschak </td>
           <td> Thoughts </td>
-          <td> <a href= "https://andymatuschak.org/"> andymatuschak.org </a> </td> </li></ul>
+          <td> <a href= "https://andymatuschak.org/"> andymatuschak.org </a> </td> 
+        </tr> 
+      </li>
+      </ul>
           
