@@ -1,5 +1,8 @@
 <html>
-  <style>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
+     <style>
 h2 {
   
   color: DimGrey;
@@ -11,8 +14,6 @@ p {
   font-family: 'Architects Daughter', cursive;
 }
   </style>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
     <title> Junjie Zhou's Blog </title>
   </head>
   <body>
