@@ -7,8 +7,12 @@ h2 {
 body{
   background-color: FloralWhite;
 }
+p {
+  font-family: 'Architects Daughter', cursive;
+}
   </style>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
     <title> Junjie Zhou's Blog </title>
   </head>
   <body>
