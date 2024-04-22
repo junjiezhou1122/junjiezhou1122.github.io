@@ -2,10 +2,11 @@
 
   <head>
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
      <style>
 h2 {
-  
   color: DimGrey;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 body{
   background-color: FloralWhite;
