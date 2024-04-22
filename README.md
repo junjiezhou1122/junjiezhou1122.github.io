@@ -17,11 +17,12 @@
       <p> ...... </p>
   </div>
     <div>
-      <h2> Recommend Resources </h2>
-      <ul>
-        <li> <a href= "https://ocw.mit.edu/"> MIT OpenCourseWare </a> </li>
-        <li> <a href = "https://hkn.eecs.berkeley.edu/courseguides"> Berkely Course Guides </a> </li>
-        <li> <em><b>Pionner</b></em>
+  <h2> Recommend Resources </h2>
+  <ul>
+    <li> <a href= "https://ocw.mit.edu/"> MIT OpenCourseWare </a> </li>
+    <li> <a href = "https://hkn.eecs.berkeley.edu/courseguides"> Berkeley Course Guides </a> </li>
+    <li> 
+      <em><b>Pioneer</b></em>
       <table>
         <tr>
           <th> Name </th>
@@ -32,7 +33,8 @@
           <td> Andy Matuschak </td>
           <td> Thoughts </td>
           <td> <a href= "https://andymatuschak.org/"> andymatuschak.org </a> </td> 
-        </tr> 
-      </li>
-      </ul>
-          
+        </tr>
+      </table>
+    </li>
+  </ul>
+</div>
