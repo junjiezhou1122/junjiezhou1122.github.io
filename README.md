@@ -22,6 +22,7 @@ p,li {
   </head>
   <body>
     <div>
+      <a href="index.html">About</a>
       <img src = "https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/VC_SpotlightBerkeley_Hero_Stock_RF_149303390_1280x640.jpg" >
       <p> <em><b>Welcome to my blog!</b></em> I'm on a quest to harmonize my educational pursuits with my personal life, and I'm excited to share my discoveries along the way. This space will feature intriguing insights, stories, and more. To delve deeper into my world, feel free to visit my <a href= "https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728?v=252d755445504c4598c6b36779be4e97&pvs=4" target="_blank"> Notion </a> page. Enjoy your stay!</p>
     </div>
