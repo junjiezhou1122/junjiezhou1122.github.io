@@ -46,4 +46,3 @@
   </ul>
 </div>
 <script src="scripts.js"></script>
-</body>
