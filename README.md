@@ -4,28 +4,14 @@
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link hre="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
-     <style>
-h2 {
-  color: DimGrey;
-  font-family: 'Gloria Hallelujah', cursive;
-}
-body{
-  background-color: FloralWhite;
-}
-p,li {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-}
-.other_pages{
-  color: orange;
-}
-
-  </style>
+    <link rel="stylesheet" href="styles.css">
+    
     <title> Junjie Zhou's Blog </title>
   </head>
-  <body>
+  <body id = "bodyColor">
     <div>
-      <a class = "other_pages" href="New pages/index.html"><b>A New Page</b></a>
+    <p>
+      <a class = "other_pages" href="New pages/index.html"><b>A New Page</b></a>    <input type = "button" value = "Changecolor" onclick = "ChangeColor()">
       <img src = "https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/VC_SpotlightBerkeley_Hero_Stock_RF_149303390_1280x640.jpg" >
       <p> <em><b>Welcome to my blog!</b></em> I'm on a quest to harmonize my educational pursuits with my personal life, and I'm excited to share my discoveries along the way. This space will feature intriguing insights, stories, and more. To delve deeper into my world, feel free to visit my <a href= "https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728?v=252d755445504c4598c6b36779be4e97&pvs=4" target="_blank"> Notion </a> page. Enjoy your stay!</p>
     </div>
@@ -59,3 +45,5 @@ p,li {
     </li>
   </ul>
 </div>
+<script src="scripts.js"></script>
+</body>
