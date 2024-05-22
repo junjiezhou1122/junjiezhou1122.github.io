@@ -32,4 +32,4 @@ tzdata==2024.1
 wcwidth==0.2.9
 Werkzeug==3.0.3
 zipp==3.18.2
-gunicorn
+gunicorn==20.1.0
