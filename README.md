@@ -13,6 +13,7 @@
     
       <a class = "other_pages" href="New pages/index.html"><b>A New Page</b></a>
       <input type = "button" value = "Changecolor" onclick = "ChangeColor()">
+      <a class = "other_pages" href="Linear_Algebra (1).pdf"><b>Gaussian Elimination Thoughts</b></a>
       <img src = "https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/VC_SpotlightBerkeley_Hero_Stock_RF_149303390_1280x640.jpg" >
       
     </div>
