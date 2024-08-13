@@ -1,0 +1,15 @@
+h2 {
+    color: DimGrey;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
+  body{
+    background-color: FloralWhite;
+  }
+  p,li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+  }
+  .other_pages{
+    color: orange;
+  }
+ 
