@@ -1,0 +1,144 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>我是小冬瓜 - Vibrant Cyberpunk Edition</title>
+      <style>
+          body, html {
+              margin: 0;
+              padding: 0;
+              height: 100%;
+              font-family: 'Courier New', monospace;
+              color: #00ff00;
+              overflow: hidden;
+          }
+          .background {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00);
+              background-size: 400% 400%;
+              animation: gradientBG 15s ease infinite;
+              z-index: -2;
+          }
+          .overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: repeating-linear-gradient(
+                  45deg,
+                  rgba(0, 0, 0, 0.7),
+                  rgba(0, 0, 0, 0.7) 10px,
+                  rgba(0, 0, 0, 0.8) 10px,
+                  rgba(0, 0, 0, 0.8) 20px
+              );
+              z-index: -1;
+          }
+          @keyframes gradientBG {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+          }
+          .container {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              position: relative;
+              z-index: 1;
+          }
+          .ascii-art {
+              font-size: 12px;
+              line-height: 1;
+              white-space: pre;
+              text-align: center;
+              color: #00ff00;
+              text-shadow: 0 0 5px #00ff00;
+              animation: pulse 2s infinite alternate;
+          }
+          @keyframes pulse {
+              0% { transform: scale(1); }
+              100% { transform: scale(1.05); }
+          }
+          h1 {
+              font-size: 3em;
+              margin-bottom: 20px;
+              text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+              animation: neonFlicker 1.5s infinite alternate;
+          }
+          @keyframes neonFlicker {
+              0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+              }
+              20%, 24%, 55% {
+                  text-shadow: none;
+              }
+          }
+          .neon-frame {
+              border: 2px solid #00ff00;
+              padding: 20px;
+              box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00 inset;
+              position: relative;
+              overflow: hidden;
+              background-color: rgba(0, 0, 0, 0.7);
+          }
+          .neon-frame::before {
+              content: '';
+              position: absolute;
+              top: -50%;
+              left: -50%;
+              width: 200%;
+              height: 200%;
+              background: repeating-linear-gradient(
+                  0deg,
+                  transparent,
+                  transparent 20px,
+                  rgba(0, 255, 0, 0.1) 20px,
+                  rgba(0, 255, 0, 0.1) 40px
+              );
+              animation: scan 5s linear infinite;
+          }
+          @keyframes scan {
+              0% { transform: translateY(0); }
+              100% { transform: translateY(50%); }
+          }
+          .interactive-area {
+              margin-top: 20px;
+              text-align: center;
+          }
+          button {
+              background-color: transparent;
+              border: 2px solid #00ff00;
+              color: #00ff00;
+              padding: 10px 20px;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+          }
+          button:hover {
+              background-color: #00ff00;
+              color: #0a0a0a;
+              box-shadow: 0 0 10px #00ff00;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="background"></div>
+      <div class="overlay"></div>
+      <div class="container">
+          <h1>我是小冬瓜</h1>
+          <div class="neon-frame">
+              <pre class="ascii-art" id="asciiArt">
+    _.-^^---....,,--_     
+ _--                  --_  
+&lt;                        &gt;)
+|        小冬瓜         | 
+ \._                   _./
