@@ -93,6 +93,26 @@ body {
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
+.about-me {
+    grid-area: about-me;
+}
+
+.about-my-learning {
+    grid-area: about-my-learning;
+}
+
+.about-my-life {
+    grid-area: about-my-life;
+}
+
+.content-body {
+    display: grid;
+    grid-template-areas:
+        "about-me about-my-learning about-my-life";
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
