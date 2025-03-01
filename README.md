@@ -53,3 +53,4 @@
   </ul>
 </div>
 <script src="scripts.js"></script>
+<script>console.log('mormons were here')</script>
