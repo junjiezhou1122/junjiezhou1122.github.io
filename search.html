@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Search Tool</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #2c3e50;
+      }
+      .container {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .university-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+      .checkbox-group input {
+        margin-right: 5px;
+      }
+      button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      button:disabled {
+        background-color: #95a5a6;
+        cursor: not-allowed;
+      }
+      #customUniversities {
+        margin-top: 10px;
+      }
+      .custom-uni-entry {
+        display: flex;
+        margin-bottom: 5px;
+      }
+      .custom-uni-entry input {
+        flex: 1;
+        margin-right: 5px;
+      }
+      .search-mode-toggle {
+        margin-bottom: 15px;
+      }
+      .search-mode {
+        display: none;
+      }
+      .search-mode.active {
+        display: block;
+      }
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        min-height: 100px;
+        font-family: Arial, sans-serif;
+      }
+      .multi-query-info {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+      .search-link {
+        display: block;
+        padding: 8px;
+        margin: 5px 0;
+        background-color: #f0f7ff;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #3498db;
+        border: 1px solid #d0e3f7;
+      }
+      .search-link:hover {
+        background-color: #e0f0ff;
+      }
+      .search-link:visited {
+        background-color: #f0f0f0;
+        color: #666;
+        border-color: #ddd;
+      }
+      .query-section {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+      }
+      .helper-text {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Academic Multi-Search Tool</h1>
+      <p>Search multiple university resources with Google.</p>
+
+      <form id="searchForm">
+        <div class="form-group search-mode-toggle">
+          <div class="checkbox-group">
+            <input
+              type="radio"
+              id="singleQueryMode"
+              name="queryMode"
+              value="single"
+              checked
+            />
+            <label for="singleQueryMode">Single Query</label>
+          </div>
+          <div class="checkbox-group">
+            <input
+              type="radio"
+              id="multiQueryMode"
+              name="queryMode"
+              value="multi"
+            />
+            <label for="multiQueryMode">Multiple Queries</label>
+          </div>
+        </div>
+
+        <div id="singleQueryContainer" class="search-mode active">
+          <div class="form-group">
+            <label for="searchQuery">Search Query:</label>
+            <input
+              type="text"
+              id="searchQuery"
+              name="searchQuery"
+              placeholder="e.g. Introduction to Machine Learning"
+              value="Introduction to Machine Learning"
+              required
+            />
+          </div>
+        </div>
+
+        <div id="multiQueryContainer" class="search-mode">
+          <div class="form-group">
+            <label for="multiSearchQueries">Multiple Search Queries:</label>
+            <textarea
+              id="multiSearchQueries"
+              name="multiSearchQueries"
+              placeholder="Enter one search query per line&#10;e.g.&#10;Introduction to Machine Learning&#10;Artificial Intelligence&#10;Deep Learning"
+            >
+Introduction to Machine Learning
+Artificial Intelligence
+Deep Learning</textarea
+            >
+            <p class="multi-query-info">Enter one search query per line.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="useSiteSearch" name="useSiteSearch" />
+            <label for="useSiteSearch"
+              >Use site-specific search (e.g. site:stanford.edu)</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Select Universities:</label>
+          <div class="checkbox-group">
+            <input type="checkbox" id="selectAll" />
+            <label for="selectAll">Select/Deselect All</label>
+          </div>
+
+          <div class="university-grid" id="universityList">
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="CMU"
+                value="CMU"
+                data-domain="cmu.edu"
+                checked
+              />
+              <label for="CMU">CMU</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Brown"
+                value="Brown"
+                data-domain="brown.edu"
+                checked
+              />
+              <label for="Brown">Brown</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Berkeley"
+                value="Berkeley"
+                data-domain="berkeley.edu"
+                checked
+              />
+              <label for="Berkeley">Berkeley</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Stanford"
+                value="Stanford"
+                data-domain="stanford.edu"
+                checked
+              />
+              <label for="Stanford">Stanford</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="MIT"
+                value="MIT"
+                data-domain="mit.edu"
+                checked
+              />
+              <label for="MIT">MIT</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Harvard"
+                value="Harvard"
+                data-domain="harvard.edu"
+                checked
+              />
+              <label for="Harvard">Harvard</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Cornell"
+                value="Cornell"
+                data-domain="cornell.edu"
+                checked
+              />
+              <label for="Cornell">Cornell</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                name="university"
+                id="Princeton"
+                value="Princeton"
+                data-domain="princeton.edu"
+                checked
+              />
+              <label for="Princeton">Princeton</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="button" id="addCustomUniversity">
+            + Add Custom University
+          </button>
+          <div id="customUniversities"></div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px">
+          <button type="submit" id="searchButton">Generate Search Links</button>
+        </div>
+      </form>
+
+      <div id="results" style="margin-top: 20px"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Toggle between single and multiple query modes
+        document
+          .querySelectorAll('input[name="queryMode"]')
+          .forEach((radio) => {
+            radio.addEventListener("change", function () {
+              document
+                .getElementById("singleQueryContainer")
+                .classList.toggle("active", this.value === "single");
+              document
+                .getElementById("multiQueryContainer")
+                .classList.toggle("active", this.value === "multi");
+            });
+          });
+
+        // Select All functionality
+        document
+          .getElementById("selectAll")
+          .addEventListener("change", function () {
+            const checkboxes = document.querySelectorAll(
+              'input[name="university"]'
+            );
+            checkboxes.forEach((checkbox) => {
+              checkbox.checked = this.checked;
+            });
+          });
+
+        // Add custom university
+        document
+          .getElementById("addCustomUniversity")
+          .addEventListener("click", () => {
+            const customUniContainer =
+              document.getElementById("customUniversities");
+            const div = document.createElement("div");
+            div.className = "custom-uni-entry";
+            div.innerHTML = `
+                    <input type="text" placeholder="University Name" class="custom-uni-name">
+                    <input type="text" placeholder="Domain (e.g. yale.edu)" class="custom-uni-domain">
+                    <button type="button" class="remove-uni">✕</button>
+                `;
+            customUniContainer.appendChild(div);
+
+            // Add remove functionality
+            div
+              .querySelector(".remove-uni")
+              .addEventListener("click", function () {
+                this.parentElement.remove();
+              });
+          });
+
+        // Form submission - Generate search links
+        document
+          .getElementById("searchForm")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const queryMode = document.querySelector(
+              'input[name="queryMode"]:checked'
+            ).value;
+
+            // Get search queries based on selected mode
+            let searchQueries = [];
+            if (queryMode === "single") {
+              const query = document.getElementById("searchQuery").value.trim();
+              if (query) {
+                searchQueries = [query];
+              }
+            } else {
+              // Multi-query mode
+              const multiQueryText =
+                document.getElementById("multiSearchQueries").value;
+              searchQueries = multiQueryText
+                .split("\n")
+                .map((line) => line.trim())
+                .filter((line) => line.length > 0);
+            }
+
+            // Validate that we have at least one query
+            if (searchQueries.length === 0) {
+              alert("Please enter at least one search query.");
+              return;
+            }
+
+            // Fixed Google search URL
+            const searchEngineUrl = "https://www.google.com/search?q=";
+            const useSiteSearch =
+              document.getElementById("useSiteSearch").checked;
+
+            // Get selected universities
+            const selectedUniversities = Array.from(
+              document.querySelectorAll('input[name="university"]:checked')
+            ).map((checkbox) => {
+              return {
+                name: checkbox.value,
+                domain: checkbox.dataset.domain,
+              };
+            });
+
+            // Get custom universities
+            const customUniversities = Array.from(
+              document.querySelectorAll(".custom-uni-entry")
+            )
+              .map((entry) => {
+                return {
+                  name: entry.querySelector(".custom-uni-name").value,
+                  domain: entry.querySelector(".custom-uni-domain").value,
+                };
+              })
+              .filter((uni) => uni.name && uni.domain);
+
+            const allUniversities = [
+              ...selectedUniversities,
+              ...customUniversities,
+            ];
+
+            // Check if any university is selected
+            if (allUniversities.length === 0) {
+              alert("Please select at least one university.");
+              return;
+            }
+
+            // Generate all search combinations (queries × universities)
+            const searchCombinations = [];
+            searchQueries.forEach((query) => {
+              allUniversities.forEach((uni) => {
+                let searchQuery = "";
+                if (useSiteSearch && uni.domain) {
+                  searchQuery = `${query} site:${uni.domain}`;
+                } else {
+                  searchQuery = `${query} ${uni.name}`;
+                }
+
+                searchCombinations.push({
+                  query: searchQuery,
+                  originalQuery: query,
+                  university: uni.name,
+                });
+              });
+            });
+
+            // Clear any previous results
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+
+            // Create a simple list of clickable links grouped by query
+            if (searchCombinations.length > 0) {
+              // Create overall summary
+              const summaryHeader = document.createElement("h3");
+              summaryHeader.textContent = `Search Links (${searchCombinations.length} total)`;
+              resultsDiv.appendChild(summaryHeader);
+
+              const instructions = document.createElement("p");
+              instructions.textContent =
+                "Click on any university name to search for that topic at that university.";
+              instructions.className = "helper-text";
+              resultsDiv.appendChild(instructions);
+
+              // Group by original query
+              const queryGroups = {};
+              searchCombinations.forEach((combo) => {
+                if (!queryGroups[combo.originalQuery]) {
+                  queryGroups[combo.originalQuery] = [];
+                }
+                queryGroups[combo.originalQuery].push(combo);
+              });
+
+              // Create a section for each query
+              Object.entries(queryGroups).forEach(([query, combinations]) => {
+                const querySection = document.createElement("div");
+                querySection.className = "query-section";
+
+                const queryHeader = document.createElement("h4");
+                queryHeader.textContent = `"${query}" (${combinations.length} universities)`;
+                querySection.appendChild(queryHeader);
+
+                // Create a simple list of links
+                const linksList = document.createElement("div");
+                linksList.style.display = "grid";
+                linksList.style.gridTemplateColumns =
+                  "repeat(auto-fill, minmax(180px, 1fr))";
+                linksList.style.gap = "8px";
+                linksList.style.marginTop = "10px";
+
+                combinations.forEach((combo) => {
+                  const link = document.createElement("a");
+                  link.href = searchEngineUrl + encodeURIComponent(combo.query);
+                  link.textContent = combo.university;
+                  link.target = "_blank";
+                  link.className = "search-link";
+
+                  linksList.appendChild(link);
+                });
+
+                querySection.appendChild(linksList);
+                resultsDiv.appendChild(querySection);
+              });
+            } else {
+              resultsDiv.innerHTML =
+                "<p>No search combinations generated. Please check your selections.</p>";
+            }
+          });
+
+        // Initialize select all checkbox state based on current selections
+        const updateSelectAllCheckbox = () => {
+          const allCheckboxes = document.querySelectorAll(
+            'input[name="university"]'
+          );
+          const checkedCheckboxes = document.querySelectorAll(
+            'input[name="university"]:checked'
+          );
+          document.getElementById("selectAll").checked =
+            allCheckboxes.length > 0 &&
+            allCheckboxes.length === checkedCheckboxes.length;
+        };
+
+        // Update select all checkbox on page load
+        updateSelectAllCheckbox();
+
+        // Add event listeners to all university checkboxes to update select all state
+        document
+          .querySelectorAll('input[name="university"]')
+          .forEach((checkbox) => {
+            checkbox.addEventListener("change", updateSelectAllCheckbox);
+          });
+      });
+    </script>
+  </body>
+</html>
