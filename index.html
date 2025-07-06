@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junjie Zhou</title>
+    <meta
+      name="description"
+      content="Computer Science student exploring the intersection of technology, mathematics, and human understanding."
+    />
+
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">JZ</a>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#thoughts" class="nav-link">Thoughts</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <i data-feather="sun"></i>
+          </button>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Junjie</span>
+          </h1>
+          <p class="hero-subtitle">
+            Computer Science student passionate about mathematics, physics, and
+            the art of problem-solving.
+          </p>
+          <div class="hero-cta">
+            <a href="#about" class="btn btn-primary">Learn More</a>
+            <a
+              href="assets/documents/Linear_Algebra.pdf"
+              class="btn btn-secondary"
+              target="_blank"
+            >
+              <i data-feather="file-text"></i>
+              My Work
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card">
+            <div class="card-header">
+              <div class="card-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="code-line">
+                <span class="keyword">const</span>
+                <span class="variable">passion</span> = [
+              </div>
+              <div class="code-line indent">
+                <span class="string">'mathematics'</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="string">'computer-science'</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="string">'physics'</span>
+              </div>
+              <div class="code-line">];</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            Exploring the beautiful intersection of science and technology
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a Computer Science student with an insatiable curiosity for
+              understanding how things work. My academic journey spans across
+              multiple disciplines, from the elegant abstractions of mathematics
+              to the fundamental laws of physics.
+            </p>
+
+            <p>
+              I believe that the most profound insights emerge at the
+              intersection of different fields. Whether it's applying
+              mathematical concepts to solve computational problems or exploring
+              how cognitive science informs algorithm design, I'm always seeking
+              connections.
+            </p>
+
+            <div class="interests">
+              <h3>Current Interests</h3>
+              <div class="interest-tags">
+                <span class="tag">Algorithms</span>
+                <span class="tag">Linear Algebra</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Cognitive Science</span>
+                <span class="tag">Physics</span>
+                <span class="tag">Philosophy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="book-open"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Learning</h4>
+                <p>Always exploring new concepts and ideas</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="cpu"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Building</h4>
+                <p>Creating solutions through code</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="users"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Sharing</h4>
+                <p>Contributing to the community</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Work & Projects</h2>
+          <p class="section-subtitle">Things I've been working on</p>
+        </div>
+
+        <div class="work-grid">
+          <div class="work-card featured">
+            <div class="work-header">
+              <h3>Gaussian Elimination Exploration</h3>
+              <div class="work-links">
+                <a
+                  href="assets/documents/Linear_Algebra.pdf"
+                  target="_blank"
+                  class="work-link"
+                >
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p>
+              Deep dive into linear algebra fundamentals, exploring the
+              mathematical beauty and computational efficiency of Gaussian
+              elimination methods.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Mathematics</span>
+              <span class="tag">Linear Algebra</span>
+              <span class="tag">Research</span>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-header">
+              <h3>Academic Portfolio</h3>
+              <div class="work-links">
+                <a
+                  href="https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728"
+                  target="_blank"
+                  class="work-link"
+                >
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p>
+              Comprehensive collection of my academic work, thoughts, and
+              learning journey across various disciplines.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Portfolio</span>
+              <span class="tag">Documentation</span>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-header">
+              <h3>More Projects</h3>
+            </div>
+            <p>
+              Currently working on several exciting projects. Check back soon
+              for updates!
+            </p>
+            <div class="work-tags">
+              <span class="tag">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thoughts Section -->
+    <section id="thoughts" class="thoughts">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Thoughts & Resources</h2>
+          <p class="section-subtitle">
+            Ideas, inspirations, and valuable resources
+          </p>
+        </div>
+
+        <div class="thoughts-grid">
+          <div class="thought-card">
+            <div class="thought-icon">
+              <i data-feather="lightbulb"></i>
+            </div>
+            <h3>Learning Philosophy</h3>
+            <p>
+              "The best way to predict the future is to invent it. But first, we
+              must understand the present through multiple lenses of knowledge."
+            </p>
+          </div>
+
+          <div class="resources-card">
+            <h3>Recommended Resources</h3>
+            <div class="resource-list">
+              <a
+                href="https://ocw.mit.edu/"
+                target="_blank"
+                class="resource-item"
+              >
+                <div class="resource-info">
+                  <h4>MIT OpenCourseWare</h4>
+                  <p>Free access to MIT's world-class education</p>
+                </div>
+                <i data-feather="external-link"></i>
+              </a>
+
+              <a
+                href="https://hkn.eecs.berkeley.edu/courseguides"
+                target="_blank"
+                class="resource-item"
+              >
+                <div class="resource-info">
+                  <h4>Berkeley Course Guides</h4>
+                  <p>Student perspectives on academic courses</p>
+                </div>
+                <i data-feather="external-link"></i>
+              </a>
+
+              <a
+                href="https://andymatuschak.org/"
+                target="_blank"
+                class="resource-item"
+              >
+                <div class="resource-info">
+                  <h4>Andy Matuschak</h4>
+                  <p>Insights on learning and knowledge work</p>
+                </div>
+                <i data-feather="external-link"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-content">
+          <h2>Let's Connect</h2>
+          <p>
+            I'm always interested in meaningful conversations about technology,
+            science, and ideas that shape our future.
+          </p>
+
+          <div class="contact-links">
+            <a
+              href="https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728"
+              target="_blank"
+              class="contact-link"
+            >
+              <i data-feather="bookmark"></i>
+              <span>Notion</span>
+            </a>
+            <a href="mailto:junjie@example.com" class="contact-link">
+              <i data-feather="mail"></i>
+              <span>Email</span>
+            </a>
+            <a
+              href="https://github.com/junjiezhou1122"
+              target="_blank"
+              class="contact-link"
+            >
+              <i data-feather="github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Junjie Zhou. Crafted with curiosity and code.</p>
+          <div class="footer-links">
+            <a href="#" onclick="scrollToTop()">Back to top</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

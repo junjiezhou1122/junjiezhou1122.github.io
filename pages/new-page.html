@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Page - Junjie Zhou</title>
+    <meta
+      name="description"
+      content="A sample page demonstrating the modern design system."
+    />
+
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">← JZ</a>
+        <div class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#work" class="nav-link">Work</a>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <i data-feather="sun"></i>
+          </button>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Sample <span class="highlight">Page</span></h1>
+          <p class="hero-subtitle">
+            This page demonstrates the modern design system and how to create
+            additional pages with consistent styling.
+          </p>
+          <div class="hero-cta">
+            <a href="../index.html" class="btn btn-primary">Back to Home</a>
+            <a href="#features" class="btn btn-secondary">
+              <i data-feather="arrow-down"></i>
+              Explore Features
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card">
+            <div class="card-header">
+              <div class="card-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="code-line">
+                <span class="keyword">const</span>
+                <span class="variable">design</span> = {
+              </div>
+              <div class="code-line indent">
+                <span class="string">'modern'</span>:
+                <span class="keyword">true</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="string">'minimal'</span>:
+                <span class="keyword">true</span>,
+              </div>
+              <div class="code-line indent">
+                <span class="string">'responsive'</span>:
+                <span class="keyword">true</span>
+              </div>
+              <div class="code-line">};</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Design Features</h2>
+          <p class="section-subtitle">
+            Modern web design principles implemented
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              This sample page showcases the clean, modern design system that
+              prioritizes readability, performance, and user experience. The
+              design follows contemporary web standards with a focus on
+              simplicity and elegance.
+            </p>
+
+            <p>
+              Every element has been carefully crafted to work harmoniously
+              together, from typography and spacing to colors and interactions.
+              The design system is built to be scalable and maintainable.
+            </p>
+
+            <div class="interests">
+              <h3>Key Features</h3>
+              <div class="interest-tags">
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Dark Mode</span>
+                <span class="tag">Smooth Animations</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">Performance</span>
+                <span class="tag">Modern CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="smartphone"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Mobile First</h4>
+                <p>Optimized for all screen sizes</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="zap"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Fast Loading</h4>
+                <p>Optimized assets and code</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i data-feather="eye"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Accessible</h4>
+                <p>WCAG compliant design</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technical Implementation</h2>
+          <p class="section-subtitle">How this design system works</p>
+        </div>
+
+        <div class="work-grid">
+          <div class="work-card featured">
+            <div class="work-header">
+              <h3>CSS Architecture</h3>
+              <div class="work-links">
+                <a
+                  href="../assets/css/styles.css"
+                  target="_blank"
+                  class="work-link"
+                >
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p>
+              Built with CSS custom properties for easy theming, modern layout
+              techniques including Grid and Flexbox, and smooth animations using
+              CSS transitions.
+            </p>
+            <div class="work-tags">
+              <span class="tag">CSS Grid</span>
+              <span class="tag">Flexbox</span>
+              <span class="tag">Custom Properties</span>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-header">
+              <h3>JavaScript</h3>
+              <div class="work-links">
+                <a
+                  href="../assets/js/scripts.js"
+                  target="_blank"
+                  class="work-link"
+                >
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p>
+              Clean, modular JavaScript with modern ES6+ features, intersection
+              observers for scroll animations, and smooth user interactions.
+            </p>
+            <div class="work-tags">
+              <span class="tag">ES6+</span>
+              <span class="tag">Intersection Observer</span>
+              <span class="tag">Modular</span>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-header">
+              <h3>Performance</h3>
+            </div>
+            <p>
+              Optimized for speed with efficient CSS, minimal JavaScript, and
+              best practices for web performance and user experience.
+            </p>
+            <div class="work-tags">
+              <span class="tag">Fast</span>
+              <span class="tag">Optimized</span>
+              <span class="tag">Best Practices</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section class="thoughts">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Getting Started</h2>
+          <p class="section-subtitle">How to use this design system</p>
+        </div>
+
+        <div class="thoughts-grid">
+          <div class="thought-card">
+            <div class="thought-icon">
+              <i data-feather="file-text"></i>
+            </div>
+            <h3>Create New Pages</h3>
+            <p>
+              Use this page as a template. Copy the structure and modify the
+              content while keeping the CSS classes for consistent styling.
+            </p>
+          </div>
+
+          <div class="resources-card">
+            <h3>Available Components</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <div class="resource-info">
+                  <h4>Cards</h4>
+                  <p>Use .work-card, .thought-card, .stat-card classes</p>
+                </div>
+              </div>
+
+              <div class="resource-item">
+                <div class="resource-info">
+                  <h4>Buttons</h4>
+                  <p>Use .btn .btn-primary or .btn-secondary classes</p>
+                </div>
+              </div>
+
+              <div class="resource-item">
+                <div class="resource-info">
+                  <h4>Tags</h4>
+                  <p>Use .tag class for small labels and categories</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Junjie Zhou. Modern design system demonstration.</p>
+          <div class="footer-links">
+            <a href="../index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+  </body>
+</html>
