@@ -3,372 +3,416 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Junjie Zhou</title>
+    <title>
+      Junjie Zhou — AI-native learning systems, agents, and knowledge workflows
+    </title>
     <meta
       name="description"
-      content="Computer Science student exploring the intersection of technology, mathematics, and human understanding."
+      content="Junjie Zhou builds AI-native learning systems, agent workflows, and knowledge tools that turn research and everyday inputs into usable products."
     />
+    <meta name="theme-color" content="#f1e6d6" />
+    <meta
+      property="og:title"
+      content="Junjie Zhou — AI-native learning systems, agents, and knowledge workflows"
+    />
+    <meta
+      property="og:description"
+      content="Builder and self-directed researcher working across learning systems, agent workflows, knowledge tools, and research-to-product experiments."
+    />
+    <meta property="og:type" content="website" />
 
-    <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css"
-    />
-
-    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="#" class="nav-logo">JZ</a>
-        <div class="nav-menu" id="nav-menu">
-          <a href="#about" class="nav-link">About</a>
-          <a href="#work" class="nav-link">Work</a>
-          <a href="#thoughts" class="nav-link">Thoughts</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <button
-            class="theme-toggle"
-            id="theme-toggle"
-            aria-label="Toggle theme"
-          >
-            <i data-feather="sun"></i>
-          </button>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
+    <header class="site-header">
+      <div class="shell nav-shell">
+        <a class="brand" href="#top" aria-label="Junjie Zhou home">
+          <span class="brand-mark">JZ</span>
+          <span class="brand-copy">
+            <strong>Junjie Zhou</strong>
+            <span>Learning to learn</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open navigation"
+        >
           <span></span>
           <span></span>
-          <span></span>
-        </div>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#principles">Principles</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Hi, I'm <span class="highlight">Junjie</span>
-          </h1>
-          <p class="hero-subtitle">
-            Computer Science student passionate about mathematics, physics, and
-            the art of problem-solving.
-          </p>
-          <div class="hero-cta">
-            <a href="#about" class="btn btn-primary">Learn More</a>
-            <a
-              href="assets/documents/Linear_Algebra.pdf"
-              class="btn btn-secondary"
-              target="_blank"
-            >
-              <i data-feather="file-text"></i>
-              My Work
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="floating-card">
-            <div class="card-header">
-              <div class="card-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <div class="card-content">
-              <div class="code-line">
-                <span class="keyword">const</span>
-                <span class="variable">passion</span> = [
-              </div>
-              <div class="code-line indent">
-                <span class="string">'mathematics'</span>,
-              </div>
-              <div class="code-line indent">
-                <span class="string">'computer-science'</span>,
-              </div>
-              <div class="code-line indent">
-                <span class="string">'physics'</span>
-              </div>
-              <div class="code-line">];</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">
-            Exploring the beautiful intersection of science and technology
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I'm a Computer Science student with an insatiable curiosity for
-              understanding how things work. My academic journey spans across
-              multiple disciplines, from the elegant abstractions of mathematics
-              to the fundamental laws of physics.
+    <main id="top">
+      <section class="hero section">
+        <div class="shell hero-grid">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">
+              AI-native learning systems · agent workflows · knowledge tools
+            </p>
+            <h1>I build tools that help learning become usable.</h1>
+            <p class="hero-text">
+              I’m Junjie Zhou — a builder and self-directed researcher working at
+              the intersection of learning systems, product design, and applied
+              AI. I like turning notes, prompts, projects, and scattered inputs
+              into workflows that make thinking clearer and action easier.
             </p>
 
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects"
+                >See selected work</a
+              >
+              <a
+                class="button button-secondary"
+                href="https://github.com/junjiezhou1122"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub ↗</a
+              >
+            </div>
+
+            <ul class="hero-signals" aria-label="Current themes">
+              <li>Project-based learning</li>
+              <li>Local-first tools</li>
+              <li>Research-to-product</li>
+              <li>Multimodal AI</li>
+            </ul>
+          </div>
+
+          <div class="hero-stack" data-reveal>
+            <article class="paper paper-primary">
+              <span class="paper-tag">Currently building</span>
+              <h2>MetaLearn</h2>
+              <p>
+                A private AI-native learning workspace for turning scattered
+                materials, goals, and reflections into structured projects and
+                usable progress.
+              </p>
+              <div class="paper-meta">
+                <span>Private build</span>
+                <span>Web first</span>
+              </div>
+            </article>
+
+            <article class="paper paper-offset">
+              <span class="paper-tag">Working style</span>
+              <p>
+                Capture widely. Distill into mental models. Turn the useful part
+                into products, systems, and experiments.
+              </p>
+            </article>
+
+            <article class="paper paper-accent">
+              <span class="paper-tag">Research line</span>
+              <p>
+                I also spend time in multimodal and medical AI — especially
+                where perception, language, and structured reasoning meet.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="shell about-grid">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">About</p>
+            <h2>Builder, researcher, and systems thinker.</h2>
+          </div>
+
+          <div class="section-body" data-reveal>
             <p>
-              I believe that the most profound insights emerge at the
-              intersection of different fields. Whether it's applying
-              mathematical concepts to solve computational problems or exploring
-              how cognitive science informs algorithm design, I'm always seeking
-              connections.
+              Most of my work lives between knowledge workflows, agentic tools,
+              and learning products. I care about systems that do more than
+              store information — they should help people notice patterns,
+              organize context, and use what they know at the moment it matters.
+            </p>
+            <p>
+              That means moving between product direction, interface design,
+              research synthesis, and implementation. I’m especially interested
+              in turning messy inputs — papers, bookmarks, writing traces,
+              questions, and project logs — into structures that support long
+              term learning and better judgment.
             </p>
 
-            <div class="interests">
-              <h3>Current Interests</h3>
-              <div class="interest-tags">
-                <span class="tag">Algorithms</span>
-                <span class="tag">Linear Algebra</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Cognitive Science</span>
-                <span class="tag">Physics</span>
-                <span class="tag">Philosophy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-stats">
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i data-feather="book-open"></i>
-              </div>
-              <div class="stat-content">
-                <h4>Learning</h4>
-                <p>Always exploring new concepts and ideas</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i data-feather="cpu"></i>
-              </div>
-              <div class="stat-content">
-                <h4>Building</h4>
-                <p>Creating solutions through code</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i data-feather="users"></i>
-              </div>
-              <div class="stat-content">
-                <h4>Sharing</h4>
-                <p>Contributing to the community</p>
-              </div>
+            <div class="focus-grid" aria-label="Focus areas">
+              <article>
+                <span>Learning systems</span>
+                <p>
+                  Project-first, context-aware tools for learning that compounds.
+                </p>
+              </article>
+              <article>
+                <span>Agent workflows</span>
+                <p>
+                  Tool-using systems that reduce friction instead of adding it.
+                </p>
+              </article>
+              <article>
+                <span>Knowledge tooling</span>
+                <p>
+                  Capture, retrieval, reflection, and interfaces for usable
+                  memory.
+                </p>
+              </article>
+              <article>
+                <span>Research lines</span>
+                <p>
+                  Multimodal AI, medical imaging, and structured generation.
+                </p>
+              </article>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Work Section -->
-    <section id="work" class="work">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Work & Projects</h2>
-          <p class="section-subtitle">Things I've been working on</p>
-        </div>
+      <section class="section section-projects" id="projects">
+        <div class="shell">
+          <div class="section-heading-row" data-reveal>
+            <div>
+              <p class="section-kicker">Selected work</p>
+              <h2>A mix of public repos and active private builds.</h2>
+            </div>
+            <p class="section-note">
+              Public code lives on GitHub. Some of the most important product
+              work is still being shaped in private.
+            </p>
+          </div>
 
-        <div class="work-grid">
-          <div class="work-card featured">
-            <div class="work-header">
-              <h3>Gaussian Elimination Exploration</h3>
-              <div class="work-links">
+          <div class="projects-grid">
+            <article class="project project-feature" data-reveal>
+              <div class="project-topline">
+                <p>Private build · learning product</p>
+                <span class="status-pill">Active</span>
+              </div>
+              <h3>MetaLearn</h3>
+              <p class="project-summary">
+                An AI-native workspace for turning learning goals, notes,
+                reflections, and resources into structured projects with useful
+                context.
+              </p>
+              <p class="project-detail">
+                I’m exploring how project-based learning, personal context, and
+                AI-generated scaffolding can work together without collapsing the
+                learner’s own thinking.
+              </p>
+              <ul class="project-tags">
+                <li>AI-native UX</li>
+                <li>Learning systems</li>
+                <li>Context-aware AI</li>
+              </ul>
+            </article>
+
+            <article class="project project-tall project-cool" data-reveal>
+              <div class="project-topline">
+                <p>Public repo · privacy-first utility</p>
                 <a
-                  href="assets/documents/Linear_Algebra.pdf"
+                  class="project-link"
+                  href="https://github.com/junjiezhou1122/TypeLearn"
                   target="_blank"
-                  class="work-link"
+                  rel="noreferrer"
+                  >View repo ↗</a
                 >
-                  <i data-feather="external-link"></i>
-                </a>
               </div>
-            </div>
-            <p>
-              Deep dive into linear algebra fundamentals, exploring the
-              mathematical beauty and computational efficiency of Gaussian
-              elimination methods.
-            </p>
-            <div class="work-tags">
-              <span class="tag">Mathematics</span>
-              <span class="tag">Linear Algebra</span>
-              <span class="tag">Research</span>
-            </div>
-          </div>
+              <h3>TypeLearn</h3>
+              <p class="project-summary">
+                A privacy-first macOS companion that turns daily typing into
+                continuous English learning.
+              </p>
+              <p class="project-detail">
+                The goal is ambient improvement: observe real writing locally,
+                surface useful corrections and patterns, and stay inside the
+                flow of normal work.
+              </p>
+              <ul class="project-tags">
+                <li>macOS</li>
+                <li>Local-first</li>
+                <li>Ambient learning</li>
+              </ul>
+            </article>
 
-          <div class="work-card">
-            <div class="work-header">
-              <h3>Academic Portfolio</h3>
-              <div class="work-links">
+            <article class="project project-soft" data-reveal>
+              <div class="project-topline">
+                <p>Private build · personal infrastructure</p>
+                <span class="status-pill">Ongoing</span>
+              </div>
+              <h3>LifeBetter</h3>
+              <p class="project-summary">
+                A meta-learning loop for capturing questions, reflecting on
+                patterns, and turning repeated lessons into reusable skills.
+              </p>
+              <ul class="project-tags">
+                <li>Reflection</li>
+                <li>Meta-skills</li>
+                <li>Personal systems</li>
+              </ul>
+            </article>
+
+            <article class="project project-earth" data-reveal>
+              <div class="project-topline">
+                <p>Public repo · infrastructure exploration</p>
                 <a
-                  href="https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728"
+                  class="project-link"
+                  href="https://github.com/junjiezhou1122/Personal_AI_Infrastructure"
                   target="_blank"
-                  class="work-link"
+                  rel="noreferrer"
+                  >View repo ↗</a
                 >
-                  <i data-feather="external-link"></i>
-                </a>
               </div>
-            </div>
-            <p>
-              Comprehensive collection of my academic work, thoughts, and
-              learning journey across various disciplines.
-            </p>
-            <div class="work-tags">
-              <span class="tag">Portfolio</span>
-              <span class="tag">Documentation</span>
-            </div>
-          </div>
+              <h3>Personal AI Infrastructure</h3>
+              <p class="project-summary">
+                Agentic AI infrastructure experiments for magnifying human
+                capability through orchestration, tool use, and personal
+                leverage.
+              </p>
+              <ul class="project-tags">
+                <li>Agents</li>
+                <li>Infrastructure</li>
+                <li>Workflows</li>
+              </ul>
+            </article>
 
-          <div class="work-card">
-            <div class="work-header">
-              <h3>More Projects</h3>
-            </div>
-            <p>
-              Currently working on several exciting projects. Check back soon
-              for updates!
-            </p>
-            <div class="work-tags">
-              <span class="tag">Coming Soon</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Thoughts Section -->
-    <section id="thoughts" class="thoughts">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Thoughts & Resources</h2>
-          <p class="section-subtitle">
-            Ideas, inspirations, and valuable resources
-          </p>
-        </div>
-
-        <div class="thoughts-grid">
-          <div class="thought-card">
-            <div class="thought-icon">
-              <i data-feather="lightbulb"></i>
-            </div>
-            <h3>Learning Philosophy</h3>
-            <p>
-              "The best way to predict the future is to invent it. But first, we
-              must understand the present through multiple lenses of knowledge."
-            </p>
-          </div>
-
-          <div class="resources-card">
-            <h3>Recommended Resources</h3>
-            <div class="resource-list">
-              <a
-                href="https://ocw.mit.edu/"
-                target="_blank"
-                class="resource-item"
-              >
-                <div class="resource-info">
-                  <h4>MIT OpenCourseWare</h4>
-                  <p>Free access to MIT's world-class education</p>
-                </div>
-                <i data-feather="external-link"></i>
-              </a>
-
-              <a
-                href="https://hkn.eecs.berkeley.edu/courseguides"
-                target="_blank"
-                class="resource-item"
-              >
-                <div class="resource-info">
-                  <h4>Berkeley Course Guides</h4>
-                  <p>Student perspectives on academic courses</p>
-                </div>
-                <i data-feather="external-link"></i>
-              </a>
-
-              <a
-                href="https://andymatuschak.org/"
-                target="_blank"
-                class="resource-item"
-              >
-                <div class="resource-info">
-                  <h4>Andy Matuschak</h4>
-                  <p>Insights on learning and knowledge work</p>
-                </div>
-                <i data-feather="external-link"></i>
-              </a>
-            </div>
+            <article class="project project-ink" data-reveal>
+              <div class="project-topline">
+                <p>Private workflow · research system</p>
+                <span class="status-pill">Exploration</span>
+              </div>
+              <h3>AgentRG</h3>
+              <p class="project-summary">
+                An internal research track around agent-supported retrieval,
+                grounding, and structured output workflows.
+              </p>
+              <ul class="project-tags">
+                <li>Agent workflows</li>
+                <li>Grounding</li>
+                <li>Research systems</li>
+              </ul>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-content">
-          <h2>Let's Connect</h2>
-          <p>
-            I'm always interested in meaningful conversations about technology,
-            science, and ideas that shape our future.
-          </p>
+      <section class="section" id="principles">
+        <div class="shell principles-layout">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Principles</p>
+            <h2>What I keep returning to.</h2>
+          </div>
 
-          <div class="contact-links">
+          <ol class="principles-list">
+            <li data-reveal>
+              <span class="principle-index">01</span>
+              <div>
+                <h3>Learning should become usable.</h3>
+                <p>
+                  I care less about accumulation than conversion. Notes, ideas,
+                  and inputs matter when they become action, practice, or better
+                  judgment.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="principle-index">02</span>
+              <div>
+                <h3>AI should work from context, not generic prompts.</h3>
+                <p>
+                  The most helpful systems understand the user’s material,
+                  history, and current direction instead of pretending every
+                  task starts from zero.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="principle-index">03</span>
+              <div>
+                <h3>Good tools reduce friction without flattening nuance.</h3>
+                <p>
+                  The point is not to automate away thinking. It is to make the
+                  right kind of thinking easier to sustain.
+                </p>
+              </div>
+            </li>
+            <li data-reveal>
+              <span class="principle-index">04</span>
+              <div>
+                <h3>Research matters more when it becomes a workflow.</h3>
+                <p>
+                  I’m drawn to ideas that can cross the boundary from paper,
+                  note, or prototype into something people can actually use.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-contact" id="contact">
+        <div class="shell contact-grid">
+          <div class="contact-copy" data-reveal>
+            <p class="section-kicker">Contact</p>
+            <h2>
+              If you’re building around learning, knowledge, or agent workflows,
+              I’d love to see what you’re working on.
+            </h2>
+            <p>
+              The easiest place to find my public work right now is GitHub.
+              That’s where I keep repos, experiments, and the visible edge of my
+              current projects.
+            </p>
+          </div>
+
+          <div class="contact-actions" data-reveal>
             <a
-              href="https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728"
-              target="_blank"
               class="contact-link"
-            >
-              <i data-feather="bookmark"></i>
-              <span>Notion</span>
-            </a>
-            <a href="mailto:junjie@example.com" class="contact-link">
-              <i data-feather="mail"></i>
-              <span>Email</span>
-            </a>
-            <a
               href="https://github.com/junjiezhou1122"
               target="_blank"
-              class="contact-link"
+              rel="noreferrer"
             >
-              <i data-feather="github"></i>
-              <span>GitHub</span>
+              <span class="contact-label">GitHub</span>
+              <strong>@junjiezhou1122</strong>
+              <span>Public repos, experiments, and ongoing work ↗</span>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://github.com/junjiezhou1122?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-label">Repositories</span>
+              <strong>Selected public code</strong>
+              <span>TypeLearn, Personal AI Infrastructure, and more ↗</span>
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>&copy; 2024 Junjie Zhou. Crafted with curiosity and code.</p>
-          <div class="footer-links">
-            <a href="#" onclick="scrollToTop()">Back to top</a>
-          </div>
-        </div>
+    <footer class="site-footer">
+      <div class="shell footer-shell">
+        <p>Junjie Zhou — learning systems, agents, and knowledge workflows.</p>
+        <a href="#top">Back to top</a>
       </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>

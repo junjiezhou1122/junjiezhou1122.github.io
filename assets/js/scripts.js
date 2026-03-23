@@ -1,314 +1,127 @@
-/**
- * Modern JavaScript for Junjie Zhou's Portfolio
- * Clean, minimal functionality with smooth interactions
- */
+document.documentElement.classList.add("js");
 
-// DOM Elements
 const navToggle = document.getElementById("nav-toggle");
-const navMenu = document.getElementById("nav-menu");
-const themeToggle = document.getElementById("theme-toggle");
-const body = document.body;
+const siteNav = document.getElementById("site-nav");
+const header = document.querySelector(".site-header");
+const revealNodes = document.querySelectorAll("[data-reveal]");
+const sectionLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const sections = document.querySelectorAll("main section[id]");
 
-// Theme Management
-let isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-/**
- * Initialize all functionality
- */
-function init() {
-  setupNavigation();
-  setupThemeToggle();
-  setupSmoothScrolling();
-  setupScrollEffects();
-  setupAnimations();
-  setupKeyboardShortcuts();
-
-  // Initialize Feather icons
-  if (typeof feather !== "undefined") {
-    feather.replace();
-  }
-
-  console.log("✨ Portfolio loaded successfully");
+function closeNav() {
+  if (!navToggle || !siteNav) return;
+  navToggle.setAttribute("aria-expanded", "false");
+  siteNav.classList.remove("is-open");
+  navToggle.classList.remove("is-open");
 }
 
-/**
- * Mobile Navigation
- */
 function setupNavigation() {
-  if (!navToggle || !navMenu) return;
+  if (!navToggle || !siteNav) return;
 
   navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    navToggle.classList.toggle("active");
-
-    // Animate hamburger menu
-    const spans = navToggle.querySelectorAll("span");
-    spans.forEach((span, index) => {
-      if (navToggle.classList.contains("active")) {
-        if (index === 0)
-          span.style.transform = "rotate(45deg) translate(5px, 5px)";
-        if (index === 1) span.style.opacity = "0";
-        if (index === 2)
-          span.style.transform = "rotate(-45deg) translate(7px, -6px)";
-      } else {
-        span.style.transform = "none";
-        span.style.opacity = "1";
-      }
-    });
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!isOpen));
+    navToggle.classList.toggle("is-open", !isOpen);
+    siteNav.classList.toggle("is-open", !isOpen);
   });
 
-  // Close menu when clicking on links
-  const navLinks = navMenu.querySelectorAll(".nav-link");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("active");
-      navToggle.classList.remove("active");
-    });
+  sectionLinks.forEach((link) => {
+    link.addEventListener("click", () => closeNav());
   });
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-      navMenu.classList.remove("active");
-      navToggle.classList.remove("active");
-    }
+  document.addEventListener("click", (event) => {
+    if (!siteNav.classList.contains("is-open")) return;
+    if (siteNav.contains(event.target) || navToggle.contains(event.target)) return;
+    closeNav();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNav();
   });
 }
 
-/**
- * Theme Toggle Functionality
- */
-function setupThemeToggle() {
-  if (!themeToggle) return;
-
-  // Set initial theme
-  updateTheme();
-
-  themeToggle.addEventListener("click", () => {
-    isDarkMode = !isDarkMode;
-    updateTheme();
-    showNotification(isDarkMode ? "Dark mode enabled" : "Light mode enabled");
-  });
-}
-
-function updateTheme() {
-  if (isDarkMode) {
-    body.classList.add("dark");
-    themeToggle.innerHTML = '<i data-feather="moon"></i>';
-  } else {
-    body.classList.remove("dark");
-    themeToggle.innerHTML = '<i data-feather="sun"></i>';
-  }
-
-  // Reinitialize Feather icons
-  if (typeof feather !== "undefined") {
-    feather.replace();
-  }
-}
-
-/**
- * Smooth Scrolling
- */
 function setupSmoothScrolling() {
-  const links = document.querySelectorAll('a[href^="#"]');
-
-  links.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
-      const target = document.querySelector(targetId);
+      const target = targetId ? document.querySelector(targetId) : null;
 
-      if (target) {
-        const headerHeight = document.querySelector(".nav").offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight - 20;
+      if (!target) return;
 
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
+      event.preventDefault();
+      const headerOffset = header ? header.offsetHeight + 18 : 18;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
     });
   });
 }
 
-/**
- * Scroll Effects
- */
-function setupScrollEffects() {
-  // Navbar background on scroll
-  const nav = document.querySelector(".nav");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      nav.style.background = "rgba(255, 255, 255, 0.95)";
-      nav.style.backdropFilter = "blur(20px)";
-    } else {
-      nav.style.background = "rgba(255, 255, 255, 0.8)";
-      nav.style.backdropFilter = "blur(20px)";
-    }
-  });
-
-  // Intersection Observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+function setupHeaderState() {
+  const syncHeader = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 16);
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, observerOptions);
+  syncHeader();
+  window.addEventListener("scroll", syncHeader, { passive: true });
+}
 
-  // Observe elements for animation
-  const animatedElements = document.querySelectorAll(
-    ".work-card, .thought-card, .stat-card, .resource-item"
+function setupReveal() {
+  if (!revealNodes.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealNodes.forEach((node) => node.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -6% 0px",
+    }
   );
-  animatedElements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
+
+  revealNodes.forEach((node) => observer.observe(node));
 }
 
-/**
- * Setup Animations
- */
-function setupAnimations() {
-  // Typing effect for hero title
-  const heroTitle = document.querySelector(".hero-title");
-  if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = "";
-    heroTitle.style.borderRight = "2px solid var(--accent-primary)";
+function setupActiveSection() {
+  if (!sections.length || !sectionLinks.length) return;
 
-    let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        heroTitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-      } else {
-        setTimeout(() => {
-          heroTitle.style.borderRight = "none";
-        }, 1000);
-      }
-    };
+  const linkMap = new Map(
+    Array.from(sectionLinks).map((link) => [link.getAttribute("href")?.slice(1), link])
+  );
 
-    // Start typing after a short delay
-    setTimeout(typeWriter, 500);
-  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const link = linkMap.get(entry.target.id);
+        if (!link || !entry.isIntersecting) return;
 
-  // Floating animation for the code card
-  const floatingCard = document.querySelector(".floating-card");
-  if (floatingCard) {
-    floatingCard.style.animation = "float 6s ease-in-out infinite";
-  }
-}
-
-/**
- * Keyboard Shortcuts
- */
-function setupKeyboardShortcuts() {
-  document.addEventListener("keydown", (e) => {
-    // Ctrl/Cmd + T to toggle theme
-    if ((e.ctrlKey || e.metaKey) && e.key === "t") {
-      e.preventDefault();
-      themeToggle.click();
+        sectionLinks.forEach((item) => item.removeAttribute("aria-current"));
+        link.setAttribute("aria-current", "true");
+      });
+    },
+    {
+      threshold: 0.45,
+      rootMargin: "-18% 0px -35% 0px",
     }
+  );
 
-    // Escape to close mobile menu
-    if (e.key === "Escape") {
-      navMenu.classList.remove("active");
-      navToggle.classList.remove("active");
-    }
-  });
+  sections.forEach((section) => observer.observe(section));
 }
 
-/**
- * Show notification
- */
-function showNotification(message) {
-  // Remove existing notification
-  const existing = document.querySelector(".notification");
-  if (existing) {
-    existing.remove();
-  }
-
-  // Create notification
-  const notification = document.createElement("div");
-  notification.className = "notification";
-  notification.textContent = message;
-  notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: var(--accent-primary);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 8px;
-        box-shadow: var(--shadow-lg);
-        z-index: 10000;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    `;
-
-  document.body.appendChild(notification);
-
-  // Animate in
-  setTimeout(() => {
-    notification.style.transform = "translateX(0)";
-  }, 100);
-
-  // Remove after 3 seconds
-  setTimeout(() => {
-    notification.style.transform = "translateX(100%)";
-    setTimeout(() => {
-      if (notification.parentNode) {
-        notification.remove();
-      }
-    }, 300);
-  }, 3000);
-}
-
-/**
- * Scroll to top function
- */
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-
-/**
- * Utility function to debounce scroll events
- */
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Initialize when DOM is loaded
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-
-// Export functions for global access
-window.scrollToTop = scrollToTop;
-window.showNotification = showNotification;
+setupNavigation();
+setupSmoothScrolling();
+setupHeaderState();
+setupReveal();
+setupActiveSection();

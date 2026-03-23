@@ -1,20 +1,19 @@
 {
   "name": "junjiezhou1122.github.io",
   "version": "1.0.0",
-  "description": "Junjie Zhou's personal blog and portfolio website",
+  "description": "Junjie Zhou's personal homepage for AI-native learning systems, agents, and knowledge workflows.",
   "main": "index.html",
   "scripts": {
-    "start": "python -m http.server 8000",
-    "dev": "python -m http.server 8000",
-    "test": "echo \"No tests specified\" && exit 0"
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
   },
   "keywords": [
-    "personal-blog",
+    "personal-homepage",
     "portfolio",
-    "academic",
-    "computer-science",
-    "mathematics",
-    "physics"
+    "ai",
+    "learning-systems",
+    "agents",
+    "knowledge-workflows"
   ],
   "author": "Junjie Zhou",
   "license": "MIT",
@@ -22,7 +21,5 @@
     "type": "git",
     "url": "https://github.com/junjiezhou1122/junjiezhou1122.github.io.git"
   },
-  "homepage": "https://junjiezhou1122.github.io",
-  "devDependencies": {},
-  "dependencies": {}
+  "homepage": "https://junjiezhou1122.github.io"
 }

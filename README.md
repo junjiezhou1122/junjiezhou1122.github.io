@@ -1,174 +1,79 @@
-# Junjie Zhou - Personal Portfolio
+# junjiezhou1122.github.io
 
-A modern, minimal personal portfolio website built with clean design principles and contemporary web technologies.
+A handcrafted personal homepage for Junjie Zhou.
 
-## ✨ Features
+This site is a lightweight static portfolio focused on:
 
-- **Modern Design**: Clean, minimal aesthetic with focus on typography and whitespace
-- **Responsive Layout**: Mobile-first design that works perfectly on all devices
-- **Dark Mode**: Automatic theme switching with manual toggle
-- **Smooth Animations**: Subtle, purposeful animations that enhance user experience
-- **Fast Performance**: Optimized assets and efficient code for lightning-fast loading
-- **Accessible**: WCAG compliant design with proper semantic HTML
-- **Modern Tech Stack**: Built with vanilla HTML, CSS, and JavaScript
+- AI-native learning systems
+- agent workflows
+- knowledge tools
+- research-to-product experiments
 
-## 🎨 Design System
+It is intentionally simple to run and easy to publish on GitHub Pages.
 
-### Typography
+## Stack
 
-- **Primary Font**: Inter (clean, modern sans-serif)
-- **Monospace**: JetBrains Mono (for code elements)
-- **Hierarchy**: Clear typographic scale with proper contrast ratios
+- HTML
+- CSS
+- vanilla JavaScript
+- Google Fonts
 
-### Color Palette
+## Local development
 
-- **Primary**: Blue (#3b82f6) and Purple (#8b5cf6) gradients
-- **Neutrals**: Clean grays for text and backgrounds
-- **Semantic**: Success green, warning orange, error red
-- **Dark Mode**: Automatic color scheme adaptation
+From the repository root:
 
-### Components
-
-- **Cards**: Clean containers with subtle shadows and hover effects
-- **Buttons**: Gradient primary buttons and outlined secondary buttons
-- **Tags**: Small, pill-shaped labels for categorization
-- **Icons**: Feather Icons for consistent, scalable iconography
-
-## 📁 Project Structure
-
+```bash
+python3 -m http.server 8000
 ```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+You can also use:
+
+```bash
+npm run dev
+```
+
+## Structure
+
+```text
 junjiezhou1122.github.io/
-├── index.html                 # Main portfolio page
-├── README.md                  # Project documentation
-├── package.json              # Project configuration
-├── .gitignore                # Version control exclusions
-├── requirements.txt          # Python dependencies
-├── assets/                   # Static assets
+├── index.html
+├── assets/
 │   ├── css/
-│   │   └── styles.css       # Modern CSS with design system
-│   ├── js/
-│   │   └── scripts.js       # Clean, modular JavaScript
-│   ├── images/              # Image assets
-│   └── documents/           # PDF and document files
-│       └── Linear_Algebra.pdf
-└── pages/                   # Additional pages
-    └── new-page.html        # Sample page template
+│   │   └── styles.css
+│   └── js/
+│       └── scripts.js
+├── craft-ui-spec.md
+├── package.json
+└── README.md
 ```
 
-## 🚀 Getting Started
+## Design direction
 
-1. **Clone or download** this repository
-2. **Open** `index.html` in your web browser
-3. **Explore** the different sections and features
+The homepage blends two influences:
 
-## 🛠️ Technologies Used
+1. A calm, editorial layout with strong typography and clear hierarchy
+2. A restrained craft-inspired visual language drawn from `craft-ui-spec.md`
 
-- **HTML5**: Semantic markup and modern structure
-- **CSS3**: Custom properties, Grid, Flexbox, and modern layout techniques
-- **JavaScript (ES6+)**: Modern JavaScript with modules and clean architecture
-- **Feather Icons**: Beautiful, consistent iconography
-- **Google Fonts**: Inter and JetBrains Mono for typography
+The result is meant to feel human, tactile, and intentional without becoming noisy or gimmicky.
 
-## 📱 Responsive Design
+## Content notes
 
-The website is built with a mobile-first approach and includes:
+The current homepage highlights work and themes around:
 
-- **Mobile**: Optimized for phones (320px+)
-- **Tablet**: Responsive layouts for tablets (768px+)
-- **Desktop**: Enhanced layouts for larger screens (1200px+)
-- **Touch-friendly**: Proper touch targets and interactions
+- MetaLearn
+- TypeLearn
+- LifeBetter
+- Personal AI Infrastructure
+- AgentRG
 
-## 🎯 Key Sections
+Update `index.html` if you want to change project descriptions, links, or homepage copy.
 
-### Hero Section
+## Deployment
 
-- Clean introduction with animated typing effect
-- Floating code card with syntax highlighting
-- Call-to-action buttons
-
-### About Section
-
-- Personal introduction and background
-- Interest tags for quick overview
-- Stat cards highlighting key areas
-
-### Work Section
-
-- Featured projects with descriptions
-- External links and documentation
-- Tag-based categorization
-
-### Thoughts & Resources
-
-- Personal philosophy and insights
-- Curated list of recommended resources
-- Clean, card-based layout
-
-### Contact Section
-
-- Multiple contact methods
-- Social and professional links
-- Clean, centered layout
-
-## 🔧 Customization
-
-### Adding New Pages
-
-1. Copy the structure from `pages/new-page.html`
-2. Update content while maintaining CSS classes
-3. Ensure proper navigation links
-
-### Modifying Styles
-
-1. Edit `assets/css/styles.css`
-2. Use CSS custom properties for theming
-3. Follow the established design system
-
-### Adding JavaScript Features
-
-1. Edit `assets/js/scripts.js`
-2. Follow the modular function structure
-3. Maintain clean, readable code
-
-## 🎨 Theme System
-
-The website includes a sophisticated theme system:
-
-- **Automatic**: Respects user's system preference
-- **Manual Toggle**: Click the sun/moon icon in navigation
-- **Keyboard Shortcut**: Ctrl/Cmd + T to toggle theme
-- **Smooth Transitions**: All theme changes are animated
-
-## ⚡ Performance Features
-
-- **Optimized Loading**: Efficient asset loading and caching
-- **Smooth Animations**: Hardware-accelerated CSS transitions
-- **Intersection Observer**: Efficient scroll-triggered animations
-- **Minimal JavaScript**: Lightweight, focused functionality
-- **Progressive Enhancement**: Works without JavaScript
-
-## 🔍 Accessibility
-
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-- **Keyboard Navigation**: Full keyboard accessibility
-- **Screen Reader Support**: Proper ARIA labels and descriptions
-- **Color Contrast**: WCAG AA compliant color ratios
-- **Focus Management**: Clear focus indicators
-
-## 📄 License
-
-This project is personal and open for educational purposes.
-
-## 🤝 Contributing
-
-This is a personal project, but suggestions and feedback are welcome!
-
-## 📞 Contact
-
-- **Portfolio**: [junjiezhou1122.github.io](https://junjiezhou1122.github.io)
-- **Notion**: [Personal Workspace](https://junjiezhou1122.notion.site/fc5ddafa532c4c26906f54c4427bd728)
-- **GitHub**: [junjiezhou1122](https://github.com/junjiezhou1122)
-
----
-
-_Built with modern web standards and a passion for clean design_
+This repo is designed to work directly with GitHub Pages from the repository root.
