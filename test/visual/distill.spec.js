@@ -4,7 +4,9 @@ const { preparePage, stabilizeVisuals, compareWithBaseline } = require("./helper
 for (const theme of ["light", "dark"]) {
   test(`distill style remains stable after load (${theme})`, async ({ page }) => {
     await preparePage(page, theme);
-    await page.goto("al-folio/blog/2021/distill/", { waitUntil: "networkidle" });
+    const response = await page.goto("al-folio/blog/2021/distill/", { waitUntil: "networkidle" });
+    expect(response?.ok()).toBe(true);
+    await expect(page.locator("d-article")).toBeVisible();
     await stabilizeVisuals(page);
 
     const before = await page.evaluate(() => {
