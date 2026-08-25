@@ -25,7 +25,7 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 prepare_fixture_source "${tmp_source}"
-cp "${repo_root}"/test/fixtures/visual/_posts/*.md "${tmp_source}/_posts/"
+cp "${repo_root}"/test/fixtures/visual/posts/*.md "${tmp_source}/_posts/"
 
 bundle exec jekyll serve --source "${tmp_source}" --host 127.0.0.1 --port "${port}" --baseurl "${baseurl}" --quiet &
 server_pid="$!"
