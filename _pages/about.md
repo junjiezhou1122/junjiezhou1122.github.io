@@ -2,6 +2,7 @@
 layout: about
 title: about
 permalink: /
+lang: en
 subtitle: I work on Auto Research and AI for Medicine, with a broader interest in human-centered AI.
 
 profile:
@@ -18,6 +19,11 @@ announcements:
 latest_posts:
   enabled: false
 ---
+
+<link rel="stylesheet" href="{{ '/assets/css/language-switcher.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/wechat-dialog.css' | relative_url }}">
+<a id="language-switcher" class="language-switcher-fallback" href="{{ '/zh/' | relative_url }}" lang="zh-CN" hreflang="zh-CN" data-locale="en" data-english-about-url="{{ '/' | relative_url }}" data-english-blog-url="{{ '/blog/' | relative_url }}">中文</a>
+<script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 Hi, I'm **Junjie Zhou (周君杰)**.
 
@@ -59,97 +65,4 @@ Research and real-world systems should strengthen each other inside this loop. T
     <img src="{{ '/assets/img/wechat-qr.JPG' | relative_url }}" alt="Junjie Zhou's WeChat QR code" width="280">
   </div>
 </dialog>
-
-<style>
-  .wechat-dialog {
-    width: min(22rem, calc(100vw - 2rem));
-    padding: 0;
-    overflow: hidden;
-    color: var(--global-text-color);
-    background: var(--global-bg-color);
-    border: 1px solid var(--global-divider-color);
-    border-radius: 0.75rem;
-    box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 24%);
-  }
-
-  .wechat-dialog::backdrop {
-    background: rgb(0 0 0 / 56%);
-    backdrop-filter: blur(0.2rem);
-  }
-
-  .wechat-dialog-content {
-    position: relative;
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .wechat-dialog-content h2 {
-    margin: 0 0 0.25rem;
-  }
-
-  .wechat-dialog-content p {
-    margin-bottom: 1rem;
-    color: var(--global-text-color-light);
-  }
-
-  .wechat-dialog-content img {
-    display: block;
-    width: min(100%, 17.5rem);
-    height: auto;
-    margin: 0 auto;
-    border-radius: 0.5rem;
-  }
-
-  .wechat-dialog-close {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    display: grid;
-    width: 2.25rem;
-    height: 2.25rem;
-    padding: 0;
-    color: var(--global-text-color);
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    border-radius: 50%;
-    place-items: center;
-  }
-
-  .wechat-dialog-close:hover,
-  .wechat-dialog-close:focus-visible {
-    color: var(--global-theme-color);
-    background: var(--global-hover-color);
-    outline: none;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const dialog = document.getElementById("wechat-qr-dialog");
-    const closeButton = document.getElementById("wechat-dialog-close");
-    const trigger = document.querySelector('.contact-icons a[href="#wechat-qr-dialog"]');
-
-    if (!(dialog instanceof HTMLDialogElement) || !(closeButton instanceof HTMLButtonElement) || !(trigger instanceof HTMLAnchorElement)) {
-      throw new Error("WeChat dialog initialization failed: required elements are missing.");
-    }
-
-    trigger.setAttribute("aria-haspopup", "dialog");
-    trigger.setAttribute("aria-controls", dialog.id);
-
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      dialog.showModal();
-    });
-
-    closeButton.addEventListener("click", () => dialog.close());
-
-    dialog.addEventListener("click", (event) => {
-      const bounds = dialog.getBoundingClientRect();
-      const clickedInside =
-        event.clientX >= bounds.left && event.clientX <= bounds.right && event.clientY >= bounds.top && event.clientY <= bounds.bottom;
-
-      if (!clickedInside) dialog.close();
-    });
-  });
-</script>
+<script src="{{ '/assets/js/wechat-dialog.js' | relative_url }}" defer></script>

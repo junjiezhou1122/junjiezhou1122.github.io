@@ -2,6 +2,7 @@
 layout: default
 permalink: /blog/
 title: blog
+lang: en
 nav: true
 nav_order: 1
 pagination:
@@ -15,6 +16,10 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
 ---
+
+<link rel="stylesheet" href="{{ '/assets/css/language-switcher.css' | relative_url }}">
+<a id="language-switcher" class="language-switcher-fallback" href="{{ '/zh/blog/' | relative_url }}" lang="zh-CN" hreflang="zh-CN" data-locale="en" data-english-about-url="{{ '/' | relative_url }}" data-english-blog-url="{{ '/blog/' | relative_url }}">中文</a>
+<script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 <div class="post">
 
