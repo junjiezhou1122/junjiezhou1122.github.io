@@ -1,10 +1,12 @@
 .language-switcher-fallback {
   float: right;
-  margin-bottom: 0.75rem;
+  margin: 1rem 1.5rem 0 0;
+  color: var(--editorial-ink, #0a0a0a);
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
 .language-switcher-item .nav-link {
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: 500 !important;
+  letter-spacing: 0.015em !important;
 }
