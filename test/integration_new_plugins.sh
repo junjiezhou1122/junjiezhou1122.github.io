@@ -7,17 +7,50 @@
 # feature silently disappears. Only asserting the rendered output catches that.
 set -euo pipefail
 
+source "$(dirname "${BASH_SOURCE[0]}")/helpers/prepare_fixture_source.sh"
+
 tmp_dir="$(mktemp -d)"
+tmp_source="${tmp_dir}/source"
 cleanup() {
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
 
+prepare_fixture_source "${tmp_source}"
+
+cat >"${tmp_source}/_posts/2022-10-15-rtl.md" <<'MARKDOWN'
+---
+layout: post
+title: RTL integration fixture
+date: 2022-10-15 10:00:00
+lang: fa
+---
+
+Temporary fixture for the RTL integration test.
+MARKDOWN
+
+cat >"${tmp_source}/_posts/2025-04-28-marimo.md" <<'MARKDOWN'
+---
+layout: post
+title: Marimo integration fixture
+date: 2025-04-28 12:00:00
+marimo: true
+---
+
+<div class="al-marimo-inline" markdown="1">
+
+```python
+print("integration fixture")
+```
+
+</div>
+MARKDOWN
+
 build() {
   local name="$1"
   shift
   local out="${tmp_dir}/site-${name}"
-  bundle exec jekyll build "$@" -d "${out}" >/dev/null
+  bundle exec jekyll build --source "${tmp_source}" "$@" -d "${out}" >/dev/null
   echo "${out}"
 }
 
@@ -74,7 +107,7 @@ grep -q 'al_marimo' "${default_site}/index.html" && fail "home page wrongly load
 # everyone who copies this template.
 override="${tmp_dir}/protect-email.yml"
 printf 'protect_email: true\n' >"${override}"
-protected_site="$(build protected --config "_config.yml,${override}")"
+protected_site="$(build protected --config "${tmp_source}/_config.yml,${override}")"
 
 # Scope note: this asserts the gating and the runtime, NOT that site-wide
 # addresses are obfuscated. `al_folio_core`'s metadata.liquid renders social
