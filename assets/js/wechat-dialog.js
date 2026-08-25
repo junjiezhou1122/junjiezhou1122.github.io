@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   closeButton.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("close", () => trigger.focus());
 
   dialog.addEventListener("click", (event) => {
     const bounds = dialog.getBoundingClientRect();

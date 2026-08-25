@@ -4,6 +4,16 @@
 
 `al-folio` v1.x is a **thin Jekyll starter, not a theme**. This repo owns starter wiring, example content, docs, and cross-plugin tests. All runtime — layouts, includes, Sass, Liquid tags, filters, feature JS — lives in versioned gems published under [`al-org-dev`](https://github.com/al-org-dev).
 
+## Site-specific product direction
+
+This fork is Junjie Zhou's bilingual personal website, not an al-folio demo. Preserve these product decisions when editing personal pages:
+
+- Public navigation is intentionally limited to About and Blog, with equivalent English and Chinese routes.
+- The visual language is a quiet, monochrome technology-editorial system: a 720px reading measure, generous whitespace, hairline dividers, restrained rounding, and almost no decorative motion.
+- Humanive is presented as Junjie's long-term direction, not as a separate company or a finished product.
+- Blog empty states are intentional. Do not restore sample posts, featured cards, tag clouds, or generic template scaffolding.
+- GitHub, X, and WeChat remain peer contact actions; WeChat opens the local QR-code dialog.
+
 ## Route your change
 
 Find your change on the left; edit only what is on the right.

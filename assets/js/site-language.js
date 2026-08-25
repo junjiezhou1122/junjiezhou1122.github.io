@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const switcher = document.getElementById("language-switcher");
+  const navContainer = document.querySelector("#navbar > .container");
   const navList = document.querySelector("#navbar .navbar-menu-list");
   const englishAboutUrl = switcher?.dataset.englishAboutUrl;
   const englishBlogUrl = switcher?.dataset.englishBlogUrl;
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (
     !(switcher instanceof HTMLAnchorElement) ||
+    !(navContainer instanceof HTMLDivElement) ||
     !(navList instanceof HTMLUListElement) ||
     !englishAboutUrl ||
     !englishBlogUrl ||
@@ -16,6 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     !blogLink
   ) {
     throw new Error("Language switcher initialization failed: required navigation elements are missing.");
+  }
+
+  let brand = navContainer.querySelector(".navbar-brand");
+  if (!(brand instanceof HTMLAnchorElement)) {
+    const navToggle = navContainer.querySelector(".navbar-toggler-main");
+    if (!(navToggle instanceof HTMLButtonElement)) {
+      throw new Error("Language switcher initialization failed: navigation toggle is missing.");
+    }
+
+    brand = document.createElement("a");
+    brand.className = "navbar-brand title";
+    brand.textContent = "Junjie Zhou";
+    navContainer.insertBefore(brand, navToggle);
   }
 
   const fallbackContainer = switcher.parentElement;
@@ -27,19 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
   navList.insertBefore(switcherItem, navList.querySelector(".toggle-container"));
   if (fallbackContainer instanceof HTMLParagraphElement && fallbackContainer.childElementCount === 0) fallbackContainer.remove();
 
-  if (switcher.dataset.locale !== "zh") return;
+  if (switcher.dataset.locale !== "zh") {
+    brand.href = englishAboutUrl;
+    return;
+  }
 
   const aboutUrl = switcher.dataset.aboutUrl;
   const blogUrl = switcher.dataset.blogUrl;
   if (!aboutUrl || !blogUrl) throw new Error("Language switcher initialization failed: Chinese navigation URLs are missing.");
 
-  aboutLink.href = aboutUrl;
-  aboutLink.childNodes[0].textContent = "关于 ";
-  blogLink.href = blogUrl;
-  blogLink.childNodes[0].textContent = "博客 ";
+  const replaceVisibleLabel = (link, label) => {
+    const textNode = Array.from(link.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+    if (!(textNode instanceof Text)) throw new Error(`Language switcher initialization failed: ${label} link label is missing.`);
+    textNode.textContent = `${label} `;
+  };
 
-  const brand = document.querySelector("#navbar .navbar-brand");
-  if (brand instanceof HTMLAnchorElement) brand.href = aboutUrl;
+  aboutLink.href = aboutUrl;
+  replaceVisibleLabel(aboutLink, "关于");
+  blogLink.href = blogUrl;
+  replaceVisibleLabel(blogLink, "博客");
+
+  brand.href = aboutUrl;
 
   const activeLink = window.location.pathname.includes("/zh/blog/") ? blogLink : aboutLink;
   activeLink.closest(".nav-item")?.classList.add("active");
