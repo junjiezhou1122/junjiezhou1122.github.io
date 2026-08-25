@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+source "$(dirname "${BASH_SOURCE[0]}")/helpers/prepare_fixture_source.sh"
+
 tmp_dir="$(mktemp -d)"
 tmp_override="${tmp_dir}/comments-test-override.yml"
 tmp_source="${tmp_dir}/source"
@@ -11,9 +13,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-mkdir -p "${tmp_source}"
-git ls-files -z | tar --null -T - -cf - | tar -xf - -C "${tmp_source}"
-mkdir -p "${tmp_source}/_posts"
+prepare_fixture_source "${tmp_source}"
 
 cat >"${tmp_source}/_posts/2022-12-10-giscus-comments.md" <<'MARKDOWN'
 ---
