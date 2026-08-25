@@ -1,4 +1,10 @@
 # Social links are displayed in the order defined here.
 github_username: junjiezhou1122
-x_username: junjiezhou1122
-rss_icon: true
+x:
+  logo: fa-brands fa-x-twitter
+  title: X
+  url: https://x.com/junjiezhou1122
+wechat:
+  logo: fa-brands fa-weixin
+  title: WeChat
+  url: "#wechat-qr-dialog"
