@@ -103,6 +103,10 @@ pagination:
 
   <ul class="post-list">
 
+    {% if site.posts.size == 0 %}
+      <li>No posts yet.</li>
+    {% endif %}
+
     {% if page.pagination.enabled %}
       {% assign postlist = paginator.posts %}
     {% else %}
