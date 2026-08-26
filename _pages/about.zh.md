@@ -13,33 +13,26 @@ description: 周君杰的个人主页，研究方向包括自动化科研、医�
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 <div class="editorial-page editorial-about">
-  <section class="about-hero" aria-labelledby="about-title">
-    <div class="about-hero-copy">
-      <p class="editorial-kicker">研究者 · 创造者 · 始终好奇</p>
-      <h1 id="about-title">周君杰</h1>
-      <p class="about-thesis">探索智能系统如何帮助人更好地理解、学习与行动。</p>
+  <section class="about-introduction" aria-labelledby="introduction-title">
+    <div class="about-introduction-main">
+      <p class="section-marker">关于</p>
+      <div class="introduction-copy">
+        <h1 class="introduction-lead" id="introduction-title">你好，我是 <strong>周君杰（Junjie Zhou）</strong>。</h1>
+        <p>我本科就读于<strong>安徽建筑大学计算机科学与技术专业</strong>，目前在<strong>杭州电子科技大学智能科学与技术专业</strong>攻读硕士学位。</p>
+        <p>我的研究方向主要是<strong>自动化科研（Auto Research）</strong>与<strong>医疗人工智能（AI4Med）</strong>。我也持续关注长程运行智能体、认知科学、复杂系统，以及这个世界上一切有趣的事物。</p>
+        <p>我相信始终保持好奇，并把好奇心转化为值得创造的东西。</p>
+
+        <nav class="contact-icons editorial-socials" aria-label="社交链接">
+          <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#wechat-qr-dialog" title="微信" aria-label="打开微信二维码"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
+        </nav>
+      </div>
     </div>
 
     <figure class="about-portrait">
       <img src="{{ '/assets/img/junjie-profile.PNG' | relative_url }}" alt="周君杰的个人头像" width="1086" height="1448" loading="eager">
     </figure>
-
-  </section>
-
-  <section class="about-introduction editorial-reading-column" aria-labelledby="introduction-title">
-    <p class="section-marker" id="introduction-title">关于</p>
-    <div class="introduction-copy">
-      <p class="introduction-lead">你好，我是 <strong>周君杰（Junjie Zhou）</strong>。</p>
-      <p>我本科就读于<strong>安徽建筑大学计算机科学与技术专业</strong>，目前在<strong>杭州电子科技大学智能科学与技术专业</strong>攻读硕士学位。</p>
-      <p>我的研究方向主要是<strong>自动化科研（Auto Research）</strong>与<strong>医疗人工智能（AI4Med）</strong>。我也持续关注长程运行智能体、认知科学、复杂系统，以及这个世界上一切有趣的事物。</p>
-      <p>我相信始终保持好奇，并把好奇心转化为值得创造的东西。</p>
-
-      <nav class="contact-icons editorial-socials" aria-label="社交链接">
-        <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-        <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-        <a href="#wechat-qr-dialog" title="微信" aria-label="打开微信二维码"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
-      </nav>
-    </div>
 
   </section>
 

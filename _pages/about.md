@@ -13,33 +13,26 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 <div class="editorial-page editorial-about">
-  <section class="about-hero" aria-labelledby="about-title">
-    <div class="about-hero-copy">
-      <p class="editorial-kicker">Researcher · Builder · Always curious</p>
-      <h1 id="about-title">Junjie Zhou</h1>
-      <p class="about-thesis">Exploring how intelligent systems can help humans understand, learn, and act.</p>
+  <section class="about-introduction" aria-labelledby="introduction-title">
+    <div class="about-introduction-main">
+      <p class="section-marker">About</p>
+      <div class="introduction-copy">
+        <h1 class="introduction-lead" id="introduction-title">Hi, I’m <strong>Junjie Zhou (周君杰)</strong>.</h1>
+        <p>I earned my bachelor’s degree in <strong>Computer Science and Technology</strong> from Anhui Jianzhu University and am pursuing a master’s degree in <strong>Intelligent Science and Technology</strong> at Hangzhou Dianzi University.</p>
+        <p>My research focuses on <strong>Auto Research</strong> and <strong>AI for Medicine (AI4Med)</strong>. I’m also drawn to long-running agents, cognitive science, complex systems, and all the interesting things in the world.</p>
+        <p>I believe in staying curious—and turning that curiosity into things worth building.</p>
+
+        <nav class="contact-icons editorial-socials" aria-label="Social links">
+          <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
+        </nav>
+      </div>
     </div>
 
     <figure class="about-portrait">
       <img src="{{ '/assets/img/junjie-profile.PNG' | relative_url }}" alt="Portrait of Junjie Zhou" width="1086" height="1448" loading="eager">
     </figure>
-
-  </section>
-
-  <section class="about-introduction editorial-reading-column" aria-labelledby="introduction-title">
-    <p class="section-marker" id="introduction-title">About</p>
-    <div class="introduction-copy">
-      <p class="introduction-lead">Hi, I’m <strong>Junjie Zhou (周君杰)</strong>.</p>
-      <p>I earned my bachelor’s degree in <strong>Computer Science and Technology</strong> from Anhui Jianzhu University and am pursuing a master’s degree in <strong>Intelligent Science and Technology</strong> at Hangzhou Dianzi University.</p>
-      <p>My research focuses on <strong>Auto Research</strong> and <strong>AI for Medicine (AI4Med)</strong>. I’m also drawn to long-running agents, cognitive science, complex systems, and all the interesting things in the world.</p>
-      <p>I believe in staying curious—and turning that curiosity into things worth building.</p>
-
-      <nav class="contact-icons editorial-socials" aria-label="Social links">
-        <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-        <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-        <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
-      </nav>
-    </div>
 
   </section>
 

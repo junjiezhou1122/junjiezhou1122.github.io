@@ -183,22 +183,6 @@ body > .container[role="main"] {
   text-transform: uppercase;
 }
 
-.about-hero {
-  display: grid;
-  min-height: 38rem;
-  padding: 7.5rem 0 6rem;
-  border-bottom: 1px solid var(--editorial-rule);
-  grid-template-columns: minmax(0, 1fr) 18rem;
-  gap: clamp(3rem, 9vw, 8rem);
-  align-items: center;
-}
-
-.about-hero-copy {
-  max-width: 43rem;
-  padding-left: clamp(0rem, 8vw, 7.5rem);
-}
-
-.about-hero h1,
 .blog-hero h1 {
   margin: 1.25rem 0 1.5rem;
   color: var(--editorial-ink);
@@ -207,16 +191,6 @@ body > .container[role="main"] {
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.98;
-}
-
-.about-thesis {
-  max-width: 39rem;
-  margin: 0;
-  color: var(--editorial-ink-soft);
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  font-weight: 400;
-  letter-spacing: -0.018em;
-  line-height: 1.45;
 }
 
 .about-portrait {
@@ -247,13 +221,24 @@ body > .container[role="main"] {
 
 .about-introduction {
   display: grid;
+  width: min(100%, 60rem);
   padding: 7rem 0 8rem;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
-  gap: 2rem;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1fr) 17rem;
+  gap: clamp(3rem, 8vw, 6rem);
+  align-items: start;
+}
+
+.about-introduction-main {
+  min-width: 0;
 }
 
 .about-introduction .section-marker {
-  padding-top: 0.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.about-introduction .about-portrait {
+  margin-top: 2.1rem;
 }
 
 .introduction-copy {
@@ -277,7 +262,9 @@ body > .container[role="main"] {
 .introduction-copy .introduction-lead {
   margin-bottom: 2rem;
   color: var(--editorial-ink);
+  font-family: var(--editorial-font);
   font-size: 1.5rem;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.45;
 }
@@ -644,40 +631,25 @@ footer.sticky-bottom a {
     width: calc(100% - 2rem);
   }
 
-  .about-hero {
-    min-height: 0;
-    padding: 4.5rem 0 4rem;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-hero-copy {
-    padding-left: 0;
-  }
-
-  .about-hero h1,
   .blog-hero h1 {
     margin: 1rem 0 1.25rem;
     font-size: 1.875rem;
     line-height: 1.05;
   }
 
-  .about-thesis {
-    font-size: 1.125rem;
-    line-height: 1.5;
-  }
-
-  .about-portrait {
-    width: min(100%, 17.5rem);
-  }
-
   .about-introduction {
-    display: block;
+    grid-template-columns: 1fr;
     padding: 4.5rem 0 5.5rem;
+    gap: 3rem;
   }
 
   .about-introduction .section-marker {
-    padding: 0 0 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-introduction .about-portrait {
+    width: min(100%, 17.5rem);
+    margin-top: 0;
   }
 
   .introduction-copy .introduction-lead {
