@@ -14,15 +14,10 @@ description: Notes from Junjie Zhou on research, agents, cognition, complex syst
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 <div class="editorial-page editorial-blog">
-  <header class="blog-hero editorial-reading-column">
-    <p class="editorial-kicker">Notes · Ideas · Work in progress</p>
-    <h1>Blog</h1>
-    <p>Notes on research, agents, cognition, complex systems, and anything that keeps me curious.</p>
-  </header>
-
 {% assign english_posts = site.posts | where_exp: "post", "post.lang != 'zh-CN'" %}
 
   <section class="editorial-post-list" aria-label="Blog posts">
+    <h1 class="sr-only">Blog</h1>
     {% if english_posts.size == 0 %}
       <div class="blog-empty-state">
         <span class="empty-index" aria-hidden="true">000</span>

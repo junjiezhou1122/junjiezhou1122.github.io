@@ -13,15 +13,10 @@ description: 周君杰关于科研、智能体、认知科学、复杂系统与�
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
 
 <div class="editorial-page editorial-blog">
-  <header class="blog-hero editorial-reading-column">
-    <p class="editorial-kicker">笔记 · 想法 · 持续生长</p>
-    <h1>博客</h1>
-    <p>记录科研、智能体、认知科学、复杂系统，以及所有让我保持好奇的事物。</p>
-  </header>
-
 {% assign chinese_posts = site.posts | where: "lang", "zh-CN" %}
 
   <section class="editorial-post-list" aria-label="博客文章">
+    <h1 class="sr-only">博客</h1>
     {% if chinese_posts.size == 0 %}
       <div class="blog-empty-state">
         <span class="empty-index" aria-hidden="true">000</span>
@@ -32,7 +27,7 @@ description: 周君杰关于科研、智能体、认知科学、复杂系统与�
       </div>
     {% else %}
       {% for post in chinese_posts %}
-        {% assign read_time = post.content | number_of_words | divided_by: 300 | plus: 1 %}
+        {% assign read_time = post.content | number_of_words: "cjk" | divided_by: 500 | plus: 1 %}
         <article class="editorial-post-row">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
           <div class="post-row-copy">
