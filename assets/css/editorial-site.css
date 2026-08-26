@@ -489,11 +489,20 @@ body > .container[role="main"] {
 }
 
 .post-row-arrow {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.35rem;
+  overflow: visible;
   color: var(--editorial-ink-faint);
-  font-size: 1.125rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.25;
   transition:
     color 140ms ease,
     transform 220ms var(--editorial-ease);
+  vector-effect: non-scaling-stroke;
 }
 
 .editorial-post-row:hover .post-row-arrow {

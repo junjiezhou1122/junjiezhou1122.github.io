@@ -94,3 +94,6 @@ jobs:
 
       - name: Run new plugin integration checks 🧩
         run: bash test/integration_new_plugins.sh
+
+      - name: Run personal blog rendering integration test 📝
+        run: bash test/integration_personal_blog.sh

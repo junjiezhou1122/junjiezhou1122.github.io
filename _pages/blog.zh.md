@@ -35,7 +35,9 @@ description: 周君杰关于科研、智能体、认知科学、复杂系统与�
             {% if post.description %}<p>{{ post.description }}</p>{% endif %}
             <span>约 {{ read_time }} 分钟</span>
           </div>
-          <span class="post-row-arrow" aria-hidden="true">↗</span>
+          <svg class="post-row-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M3 13 13 3M6 3h7v7" />
+          </svg>
         </article>
       {% endfor %}
     {% endif %}

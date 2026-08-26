@@ -71,6 +71,7 @@ bash test/integration_bootstrap_compat.sh
 bash test/integration_upgrade_cli.sh
 bash test/integration_css_minify.sh
 bash test/integration_new_plugins.sh
+bash test/integration_personal_blog.sh
 npx playwright install chromium webkit
 npm run test:visual
 bundle exec al-folio upgrade audit
@@ -82,7 +83,7 @@ docker compose logs --tail=80
 docker compose down
 ```
 
-All seven `test/integration_*.sh` scripts are gated by `unit-tests.yml`; run the ones your change touches. Docker note: v1 uses `/srv/jekyll/bin/entry_point.sh` and serves from container-local `/tmp/_site` to avoid host bind-mount write deadlocks.
+All eight `test/integration_*.sh` scripts are gated by `unit-tests.yml`; run the ones your change touches. Docker note: v1 uses `/srv/jekyll/bin/entry_point.sh` and serves from container-local `/tmp/_site` to avoid host bind-mount write deadlocks.
 
 ## Before you open a PR
 
