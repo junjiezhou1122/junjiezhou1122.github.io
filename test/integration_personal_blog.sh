@@ -12,7 +12,7 @@ trap cleanup EXIT INT TERM
 
 bundle exec jekyll build --source "${repo_root}" --destination "${site_dir}" --quiet
 
-ruby -rnokogiri - "${site_dir}" <<'RUBY'
+bundle exec ruby -rnokogiri - "${site_dir}" <<'RUBY'
 site_dir = ARGV.fetch(0)
 
 article_paths = [
