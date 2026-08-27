@@ -29,6 +29,24 @@ article_paths.each do |relative_path|
   abort "Bayesian expression is missing: #{relative_path}" unless document.at_css("article")&.text&.include?("P(you | your history)")
 end
 
+feedback_paths = [
+  "blog/2026/no-history-no-personal-ai/index.html",
+  "zh/blog/2026/no-history-no-personal-ai/index.html",
+  "blog/2026/the-network-comes-later/index.html",
+  "zh/blog/2026/the-network-comes-later/index.html",
+]
+
+feedback_paths.each do |relative_path|
+  path = File.join(site_dir, relative_path)
+  abort "missing rendered article: #{relative_path}" unless File.file?(path)
+
+  html = File.read(path)
+  document = Nokogiri::HTML(html)
+  abort "Giscus host is missing: #{relative_path}" unless document.at_css("#giscus_thread")
+  abort "Giscus client is missing: #{relative_path}" unless html.include?("https://giscus.app/client.js")
+  abort "Giscus is misconfigured: #{relative_path}" if html.include?("giscus comments misconfigured")
+end
+
 list_paths = ["blog/index.html", "zh/blog/index.html"]
 
 list_paths.each do |relative_path|
