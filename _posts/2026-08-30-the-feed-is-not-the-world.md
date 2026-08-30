@@ -36,7 +36,7 @@ Imagine 100 people preparing for an exam. Perhaps 20 of them eventually succeed,
 
 This does not mean that every successful person posts or that every unsuccessful person disappears. It means that the probability of becoming visible may already depend on what happened. A success is often easier to announce than a failure. An achievement is easier to turn into a story than an unfinished attempt. A polished outcome is easier to share than a confusing process that is still underway.
 
-Research on social-media participation consistently finds that a large share of users are mostly silent consumers, while a small minority produces a disproportionate amount of public content. Research on self-presentation also finds that people tend to curate more positive, attractive, successful, or idealized versions of their lives. We still do not have a clean estimate for many everyday selection functions, such as how much more likely someone is to post after winning a competition than after losing one. Those probabilities vary by platform and context, but the direction is difficult to ignore.
+Research on social-media participation consistently finds that a large share of users are mostly silent consumers, while a small minority produces a disproportionate amount of public content. Research on self-presentation reaches a similar conclusion: people tend to curate more positive, attractive, successful, or idealized versions of their lives. We still do not have a clean estimate for many everyday selection functions, such as how much more likely someone is to post after winning a competition than after losing one. Those probabilities vary by platform and context, but the direction is difficult to ignore.
 
 The internet begins with a population that is already missing people in a non-random way. People who fail may be more likely to remain silent. Ordinary events may be less likely to be published. An unsuccessful experiment may stay in a notebook. A normal relationship may never become a story. The things missing from the feed are not random omissions; they disappear partly because they are ordinary, painful, private, or difficult to narrate.
 
@@ -48,7 +48,7 @@ Consider two posts. One says, "I studied for eight hours today." The other says,
 
 This does not mean that users genuinely prefer everything they engage with. People may spend more time on angry political content without wanting more anger in their lives. They may comment because something is provocative, not because it is useful or representative. But when engagement becomes a ranking signal, attention advantage can become exposure advantage. A post that receives more reactions is given more opportunities to receive reactions.
 
-Large audits and randomized feed experiments have found that engagement-oriented ranking can increase exposure to anger, anxiety, hostility, toxicity, and political conflict. The platform does not need to fabricate anything. It only needs to repeatedly amplify content that already has a selection advantage.
+Large audits and randomized feed experiments have found that engagement-oriented ranking can increase exposure to anger, anxiety, hostility, toxicity, and political conflict. One [study](https://doi.org/10.1073/pnas.2024292118) found that out-group animosity is a strong driver of engagement, while a [field experiment](https://doi.org/10.1126/science.adu5584) found that reranking partisan animosity altered affective polarization. The platform does not need to fabricate anything. It only needs to repeatedly amplify content that already has a selection advantage.
 
 In a simple toy simulation, a group that represents only 1% of the underlying population can become roughly 8% of the feed under engagement-based ranking. If that group also posts ten times more actively than everyone else, its feed share can approach 50%. That is not a forecast of any particular platform. It is a reminder that small differences in visibility can become large differences in perceived reality.
 
@@ -58,7 +58,7 @@ Personalization adds another layer. If I spend my time reading about AI, researc
 
 My feed becomes increasingly conditioned on my history, my network, my interests, and the behavior of people similar to me. An AI researcher opens Twitter and wonders why everyone is building agents. A student preparing for an exam opens Xiaohongshu and wonders why everyone is getting admitted. A founder checks their feed and wonders how everyone has already raised money.
 
-Each person is living inside a different local reality. This does not mean that personalization automatically produces deep ideological polarization. Large experiments have found that changing what people see can alter their exposure and their perception of social norms, while having mixed effects on more durable attitudes. Personalization clearly changes observation; its consequences for long-term belief are more complicated.
+Each person is living inside a different local reality. This does not mean that personalization automatically produces deep ideological polarization. Large experiments have found that changing what people see can alter exposure, while having mixed effects on more durable attitudes. Personalization clearly changes observation; its consequences for long-term belief are more complicated.
 
 The emotional force of the system becomes clearest when we consider people who do not post. Suppose 100 people take an exam. Twenty succeed and 80 fail. Many of the successful students share their results. Most of the unsuccessful students do not. The feed now contains far more success stories than the underlying population does, and the platform distributes those stories because they attract attention.
 
@@ -70,7 +70,7 @@ The feed selects what we see. The mind turns what we see into a model of the wor
 
 Humans naturally use what is easy to recall as a clue about what is common. Vivid, emotional, and repeatedly encountered information can feel more representative than it really is. We quietly substitute "I see this often" for "this happens often," even though seeing many admitted students tells us nothing about the admission rate, just as seeing many founders announce funding tells us nothing about how many startups failed quietly.
 
-Research on social-media outrage has shown that observers tend to overestimate how angry other users actually are, and that this error can expand into mistaken beliefs about collective emotion, communication norms, hostility, and polarization. More recent randomized feed research has also shown that changing ranking algorithms can alter people’s perception of social norms and group animosity. Other experiments have found that repeatedly seeing idealized or highly successful people can produce upward social comparison, lowering self-evaluation and well-being.
+Research on social-media outrage has shown that observers tend to overestimate how angry other users actually are, and that this error can expand into mistaken beliefs about collective emotion, communication norms, hostility, and polarization ([Brady et al. 2023](https://doi.org/10.1038/s41562-023-01582-0)). Other experiments have found that repeatedly seeing idealized or highly successful people can produce upward social comparison, lowering self-evaluation and well-being ([McComb et al. 2023](https://doi.org/10.1080/15213269.2023.2180647)).
 
 Put together, the process looks something like this: **world → published world → ranked world → personalized world → remembered world → perceived world.** Several links in this chain have been studied directly. We have evidence for unequal participation, selective self-presentation, engagement-based exposure, personalized information environments, overestimation of online outrage, and the psychological cost of repeated upward comparison.
 
@@ -88,12 +88,11 @@ We can develop a similar habit ourselves. When we see another announcement of a 
 
 The internet’s greatest danger may not be that it gives us false information. It may be that it gives us information that is true, but profoundly unrepresentative. A thousand true, carefully selected facts can still assemble a world that does not exist. The problem is not that we failed to see everyone. The problem is that the people we did not see were not missing at random. The feed is not the world. It is a selected observation of the world, and our minds are still learning how to tell the difference.
 
-## Evidence and sources
+## Further reading
 
-The argument in this essay combines findings that have been tested separately. The broader pipeline is a synthesis, not a claim that one existing study has already proved the entire chain.
+I am bringing several lines of research together here. The studies support individual links in the chain; the chain itself is the hypothesis.
 
-- Pew Research Center's 2020 survey of 10,093 U.S. adults on participation in political and social discussions online.
-- [Overperception of moral outrage in online social networks inflates beliefs about intergroup hostility](https://doi.org/10.1038/s41562-023-01582-0), _Nature Human Behaviour_.
-- [A meta-analysis of the effects of social media exposure to upward comparison targets on self-evaluations and emotions](https://doi.org/10.1080/15213269.2023.2180647).
+- [Overperception of moral outrage in online social networks inflates beliefs about intergroup hostility](https://doi.org/10.1038/s41562-023-01582-0), _Nature Human Behaviour_, 2023.
+- [A meta-analysis of the effects of social media exposure to upward comparison targets on self-evaluations and emotions](https://doi.org/10.1080/15213269.2023.2180647), 2023.
 - [Out-group animosity drives engagement on social media](https://doi.org/10.1073/pnas.2024292118), _Proceedings of the National Academy of Sciences_.
 - [Reranking partisan animosity in algorithmic social media feeds alters affective polarization](https://doi.org/10.1126/science.adu5584), _Science_.
