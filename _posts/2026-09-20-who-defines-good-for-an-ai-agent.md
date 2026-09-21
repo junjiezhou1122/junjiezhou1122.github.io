@@ -15,6 +15,8 @@ categories:
 lang: en
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/editorial-site.css' | relative_url }}">
+
 > **TL;DR** As AI agents move from answering benchmark questions to operating software, manipulating files, and completing real-world workflows, a basic assumption in evaluation becomes increasingly important: who gets to define what “good” means? APEX-Agents provides a useful model for professional work: realistic environments, natural tasks, agentic execution, and expert-defined rubrics. We can extend this paradigm to consumer and individual-facing work, where the world is the user’s digital environment and the rubric reflects the preferences of the person being served.
 >
 > The central idea is to build evaluations where **World = files / software**, **Task = your command**, and **Rubric = personal preferences**. A task such as “make a slide deck for my class presentation from the source materials” is not just a test of whether an agent can generate slides. It tests whether the agent can understand the user’s goal, operate within their environment, and produce an outcome that fits what this particular person considers good.

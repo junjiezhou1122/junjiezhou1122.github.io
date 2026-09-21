@@ -15,17 +15,18 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
 <div class="editorial-page editorial-about">
   <section class="about-introduction" aria-labelledby="introduction-title">
     <div class="about-introduction-main">
-      <p class="section-marker">About</p>
+      <p class="section-marker">About · 01</p>
       <div class="introduction-copy">
-        <h1 class="introduction-lead" id="introduction-title">Hi, I’m <strong>Junjie Zhou (周君杰)</strong>.</h1>
+        <h1 class="introduction-lead" id="introduction-title">Junjie Zhou</h1>
+        <p class="introduction-role">Researching Auto Research, AI for Medicine, and human-centered AI.</p>
         <p>I earned my bachelor’s degree in <strong>Computer Science and Technology</strong> from Anhui Jianzhu University and am pursuing a master’s degree in <strong>Intelligent Science and Technology</strong> at Hangzhou Dianzi University.</p>
         <p>My research focuses on <strong>Auto Research</strong> and <strong>AI for Medicine (AI4Med)</strong>. I’m also drawn to long-running agents, cognitive science, complex systems, and all the interesting things in the world.</p>
         <p>I believe in staying curious—and turning that curiosity into things worth building.</p>
 
         <nav class="contact-icons editorial-socials" aria-label="Social links">
-          <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-          <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-          <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i></a>
+          <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+          <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+          <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>WeChat</span></a>
         </nav>
       </div>
     </div>
@@ -38,7 +39,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
 
   <section class="humanive" aria-labelledby="humanive-title">
     <header class="humanive-header editorial-reading-column">
-      <p class="section-marker">Ongoing direction · 01</p>
+      <p class="section-marker">Ongoing direction · 02</p>
       <h2 id="humanive-title">Humanive</h2>
       <p class="humanive-tagline">Infrastructure for humans in the age of AI.</p>
       <p>AI should not only become more capable. It should help <strong>humans become more capable</strong>.</p>
@@ -67,6 +68,36 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
       <p class="loop-label">The core loop</p>
       <p class="loop-flow"><span>Understand</span><i aria-hidden="true">→</i><span>Develop</span><i aria-hidden="true">→</i><span>Extend</span><i aria-hidden="true">→</i><span>Observe</span><i aria-hidden="true">→</i><span>Understand better</span></p>
       <p class="loop-principle">The form is secondary. The human problem comes first.</p>
+    </div>
+
+  </section>
+
+{% assign home_posts = site.posts | where_exp: "post", "post.lang != 'zh-CN'" | slice: 0, 3 %}
+
+  <section class="editorial-writing" aria-labelledby="writing-title">
+    <header class="section-header editorial-reading-column">
+      <div>
+        <p class="section-marker">Writing · 03</p>
+        <h2 id="writing-title">Recent notes</h2>
+      </div>
+      <a class="section-link" href="{{ '/blog/' | relative_url }}">All writing <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <div class="editorial-post-list home-post-list">
+      {% for post in home_posts %}
+        {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+        <article class="editorial-post-row home-post-row">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+          <div class="post-row-copy">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+            <span>{{ read_time }} min read</span>
+          </div>
+          <svg class="post-row-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M3 13 13 3M6 3h7v7" />
+          </svg>
+        </article>
+      {% endfor %}
     </div>
 
   </section>

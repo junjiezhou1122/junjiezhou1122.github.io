@@ -16,8 +16,13 @@ description: Notes from Junjie Zhou on research, agents, cognition, complex syst
 <div class="editorial-page editorial-blog">
 {% assign english_posts = site.posts | where_exp: "post", "post.lang != 'zh-CN'" %}
 
+  <header class="blog-hero editorial-reading-column">
+    <p class="section-marker">Writing · Archive</p>
+    <h1>Blog</h1>
+    <p>Notes on research, agents, cognition, complex systems, and things worth exploring.</p>
+  </header>
+
   <section class="editorial-post-list" aria-label="Blog posts">
-    <h1 class="sr-only">Blog</h1>
     {% if english_posts.size == 0 %}
       <div class="blog-empty-state">
         <span class="empty-index" aria-hidden="true">000</span>
@@ -30,15 +35,15 @@ description: Notes from Junjie Zhou on research, agents, cognition, complex syst
       {% for post in english_posts %}
         {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
         <article class="editorial-post-row">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
           <div class="post-row-copy">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
             {% if post.description %}<p>{{ post.description }}</p>{% endif %}
-            <span>{{ read_time }} min read</span>
+            <div class="post-row-footer">
+              <span>{{ read_time }} min read</span>
+              <a class="post-row-action" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
-          <svg class="post-row-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path d="M3 13 13 3M6 3h7v7" />
-          </svg>
         </article>
       {% endfor %}
     {% endif %}

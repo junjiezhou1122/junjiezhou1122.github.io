@@ -14,6 +14,7 @@ categories:
 lang: zh-CN
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/editorial-site.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/language-switcher.css' | relative_url }}">
 <a id="language-switcher" class="language-switcher-fallback" href="{{ '/blog/2026/the-feed-is-not-the-world/' | relative_url }}" lang="en" hreflang="en" data-locale="zh" data-english-about-url="{{ '/' | relative_url }}" data-english-blog-url="{{ '/blog/' | relative_url }}" data-about-url="{{ '/zh/' | relative_url }}" data-blog-url="{{ '/zh/blog/' | relative_url }}">EN</a>
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>

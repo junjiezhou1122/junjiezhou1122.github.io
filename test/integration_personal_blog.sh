@@ -47,17 +47,51 @@ feedback_paths.each do |relative_path|
   abort "Giscus is misconfigured: #{relative_path}" if html.include?("giscus comments misconfigured")
 end
 
-list_paths = ["blog/index.html", "zh/blog/index.html"]
+post_pages = Dir.glob(File.join(site_dir, "blog", "20*", "*", "index.html")) + Dir.glob(File.join(site_dir, "zh", "blog", "20*", "*", "index.html"))
+abort "no rendered article pages found" if post_pages.empty?
+post_pages.each do |path|
+  html = File.read(path)
+  abort "article page does not load editorial styles: #{path}" unless html.include?("assets/css/editorial-site.css")
+end
 
-list_paths.each do |relative_path|
+list_cases = [
+  ["blog/index.html", "Blog", "Read"],
+  ["zh/blog/index.html", "博客", "阅读"],
+]
+
+list_cases.each do |relative_path, heading, action_label|
   path = File.join(site_dir, relative_path)
   abort "missing rendered blog list: #{relative_path}" unless File.file?(path)
 
   document = Nokogiri::HTML(File.read(path))
-  arrows = document.css("svg.post-row-arrow")
-  abort "blog list has no SVG arrows: #{relative_path}" if arrows.empty?
-  abort "blog list arrow contains font-rendered text: #{relative_path}" unless arrows.all? { |arrow| arrow.text.strip.empty? }
-  abort "blog list arrow path is missing: #{relative_path}" unless arrows.all? { |arrow| arrow.at_css('path[d="M3 13 13 3M6 3h7v7"]') }
+  hero = document.at_css(".blog-hero")
+  abort "blog hero is missing: #{relative_path}" unless hero
+  abort "blog hero heading is missing: #{relative_path}" unless hero.at_css("h1")&.text == heading
+  abort "blog hero description is missing: #{relative_path}" unless hero.css("p").length > 1
+  rows = document.css(".editorial-post-row")
+  abort "blog list has no post rows: #{relative_path}" if rows.empty?
+  actions = document.css("a.post-row-action")
+  abort "blog list read actions are missing: #{relative_path}" unless actions.length == rows.length
+  abort "blog list read action label is missing: #{relative_path}" unless actions.all? { |action| action.text.include?(action_label) }
+end
+
+homepage_cases = [
+  ["index.html", "Recent notes", "Who Gets to Define", "信息流不是世界"],
+  ["zh/index.html", "最近的笔记", "信息流不是世界", "Who Gets to Define"],
+]
+
+homepage_cases.each do |relative_path, heading, expected_title, unexpected_title|
+  path = File.join(site_dir, relative_path)
+  abort "missing rendered homepage: #{relative_path}" unless File.file?(path)
+
+  document = Nokogiri::HTML(File.read(path))
+  section = document.at_css(".editorial-writing")
+  abort "homepage writing section is missing: #{relative_path}" unless section
+  abort "homepage writing heading is missing: #{relative_path}" unless section.text.include?(heading)
+  abort "homepage has no recent writing rows: #{relative_path}" if section.css(".home-post-row").empty?
+  abort "homepage recent writing link is missing: #{relative_path}" unless section.at_css("a.section-link")
+  abort "homepage contains a post from the wrong language: #{relative_path}" if section.text.include?(unexpected_title)
+  abort "homepage expected recent post is missing: #{relative_path}" unless section.text.include?(expected_title)
 end
 
 puts "Personal blog rendering integration passed."

@@ -12,6 +12,8 @@ This fork is Junjie Zhou's bilingual personal website, not an al-folio demo. Pre
 - The visual language is a quiet, monochrome technology-editorial system: a 720px reading measure, generous whitespace, hairline dividers, restrained rounding, and almost no decorative motion.
 - About opens directly with the introduction copy on the left and the portrait on the right. Do not restore a separate name-and-tagline hero.
 - Humanive is presented as Junjie's long-term direction, not as a separate company or a finished product.
+- The About homepage may surface a short, language-matched preview of recent first-party writing; keep it data-driven from `_posts` and link to the full Blog archive rather than adding generic demo content.
+- The Blog archive opens with a visible bilingual title and description, uses serif display headings, compact chronological rows, and explicit Read/阅读 actions; individual post titles and section headings share the same display face.
 - Blog empty states are intentional. Do not restore sample posts, featured cards, tag clouds, or generic template scaffolding.
 - Every blog post uses Giscus for public feedback by default; keep the repository-wide post default and its rendered-page integration coverage intact.
 - GitHub, X, and WeChat remain peer contact actions; WeChat opens the local QR-code dialog.

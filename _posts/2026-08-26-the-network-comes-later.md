@@ -15,6 +15,7 @@ categories:
 lang: en
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/editorial-site.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/language-switcher.css' | relative_url }}">
 <a id="language-switcher" class="language-switcher-fallback" href="{{ '/zh/blog/2026/the-network-comes-later/' | relative_url }}" lang="zh-CN" hreflang="zh-CN" data-locale="en" data-english-about-url="{{ '/' | relative_url }}" data-english-blog-url="{{ '/blog/' | relative_url }}">中文</a>
 <script src="{{ '/assets/js/site-language.js' | relative_url }}" defer></script>
