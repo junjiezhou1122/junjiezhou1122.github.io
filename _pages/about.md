@@ -32,7 +32,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
     </div>
 
     <figure class="about-portrait">
-      <img src="{{ '/assets/img/junjie-profile.PNG' | relative_url }}" alt="Portrait of Junjie Zhou" width="1086" height="1448" loading="eager">
+      <img src="{{ '/assets/img/junjie-profile-800.webp' | relative_url }}" srcset="{{ '/assets/img/junjie-profile-480.webp' | relative_url }} 480w, {{ '/assets/img/junjie-profile-800.webp' | relative_url }} 800w" sizes="(max-width: 767px) 280px, 288px" alt="Portrait of Junjie Zhou" width="1086" height="1448" loading="eager" fetchpriority="high">
     </figure>
 
   </section>
@@ -111,7 +111,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
     <p class="dialog-kicker">Connect</p>
     <h2 id="wechat-dialog-title">WeChat</h2>
     <p>Scan the QR code to add me.</p>
-    <img src="{{ '/assets/img/wechat-qr.JPG' | relative_url }}" alt="Junjie Zhou's WeChat QR code" width="888" height="1191">
+    <img data-src="{{ '/assets/img/wechat-qr.JPG' | relative_url }}" alt="Junjie Zhou's WeChat QR code" width="888" height="1191">
   </div>
 </dialog>
 <script src="{{ '/assets/js/wechat-dialog.js' | relative_url }}" defer></script>

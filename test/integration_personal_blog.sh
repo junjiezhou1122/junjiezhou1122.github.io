@@ -24,7 +24,7 @@ article_paths.each do |relative_path|
   path = File.join(site_dir, relative_path)
   abort "missing rendered article: #{relative_path}" unless File.file?(path)
 
-  document = Nokogiri::HTML(File.read(path))
+  document = Nokogiri::HTML(html)
   abort "Bayesian expression rendered as a table: #{relative_path}" unless document.css("article table").empty?
   abort "Bayesian expression is missing: #{relative_path}" unless document.at_css("article")&.text&.include?("P(you | your history)")
 end
@@ -84,6 +84,7 @@ homepage_cases.each do |relative_path, heading, expected_title, unexpected_title
   path = File.join(site_dir, relative_path)
   abort "missing rendered homepage: #{relative_path}" unless File.file?(path)
 
+  html = File.read(path)
   document = Nokogiri::HTML(File.read(path))
   section = document.at_css(".editorial-writing")
   abort "homepage writing section is missing: #{relative_path}" unless section
@@ -92,6 +93,10 @@ homepage_cases.each do |relative_path, heading, expected_title, unexpected_title
   abort "homepage recent writing link is missing: #{relative_path}" unless section.at_css("a.section-link")
   abort "homepage contains a post from the wrong language: #{relative_path}" if section.text.include?(unexpected_title)
   abort "homepage expected recent post is missing: #{relative_path}" unless section.text.include?(expected_title)
+  abort "homepage does not use the responsive portrait asset: #{relative_path}" unless html.include?("junjie-profile-800.webp")
+  abort "homepage still ships the original portrait asset: #{relative_path}" if html.include?("junjie-profile.PNG")
+  abort "homepage still loads MathJax: #{relative_path}" if html.include?("MathJax-script")
+  abort "homepage eagerly loads the WeChat QR image: #{relative_path}" if html.match?(%r{<img[^>]+\ssrc="[^"]*wechat-qr})
 end
 
 puts "Personal blog rendering integration passed."

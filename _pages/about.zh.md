@@ -32,7 +32,7 @@ description: 周君杰的个人主页，研究方向包括自动化科研、医�
     </div>
 
     <figure class="about-portrait">
-      <img src="{{ '/assets/img/junjie-profile.PNG' | relative_url }}" alt="周君杰的个人头像" width="1086" height="1448" loading="eager">
+      <img src="{{ '/assets/img/junjie-profile-800.webp' | relative_url }}" srcset="{{ '/assets/img/junjie-profile-480.webp' | relative_url }} 480w, {{ '/assets/img/junjie-profile-800.webp' | relative_url }} 800w" sizes="(max-width: 767px) 280px, 288px" alt="周君杰的个人头像" width="1086" height="1448" loading="eager" fetchpriority="high">
     </figure>
 
   </section>
@@ -111,7 +111,7 @@ description: 周君杰的个人主页，研究方向包括自动化科研、医�
     <p class="dialog-kicker">保持联系</p>
     <h2 id="wechat-dialog-title">微信</h2>
     <p>扫描二维码添加我的微信。</p>
-    <img src="{{ '/assets/img/wechat-qr.JPG' | relative_url }}" alt="周君杰的微信二维码" width="888" height="1191">
+    <img data-src="{{ '/assets/img/wechat-qr.JPG' | relative_url }}" alt="周君杰的微信二维码" width="888" height="1191">
   </div>
 </dialog>
 <script src="{{ '/assets/js/wechat-dialog.js' | relative_url }}" defer></script>

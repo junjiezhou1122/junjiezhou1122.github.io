@@ -2,8 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const dialog = document.getElementById("wechat-qr-dialog");
   const closeButton = document.getElementById("wechat-dialog-close");
   const trigger = document.querySelector('.contact-icons a[href="#wechat-qr-dialog"]');
+  const qrCode = dialog?.querySelector("img[data-src]");
 
-  if (!(dialog instanceof HTMLDialogElement) || !(closeButton instanceof HTMLButtonElement) || !(trigger instanceof HTMLAnchorElement)) {
+  if (
+    !(dialog instanceof HTMLDialogElement) ||
+    !(closeButton instanceof HTMLButtonElement) ||
+    !(trigger instanceof HTMLAnchorElement) ||
+    !(qrCode instanceof HTMLImageElement) ||
+    !qrCode.dataset.src
+  ) {
     throw new Error("WeChat dialog initialization failed: required elements are missing.");
   }
 
@@ -12,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
+    if (qrCode.dataset.loaded !== "true") {
+      qrCode.src = qrCode.dataset.src;
+      qrCode.dataset.loaded = "true";
+    }
     dialog.showModal();
   });
 
