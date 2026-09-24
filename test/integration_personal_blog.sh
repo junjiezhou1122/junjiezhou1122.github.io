@@ -24,6 +24,7 @@ article_paths.each do |relative_path|
   path = File.join(site_dir, relative_path)
   abort "missing rendered article: #{relative_path}" unless File.file?(path)
 
+  html = File.read(path)
   document = Nokogiri::HTML(html)
   abort "Bayesian expression rendered as a table: #{relative_path}" unless document.css("article table").empty?
   abort "Bayesian expression is missing: #{relative_path}" unless document.at_css("article")&.text&.include?("P(you | your history)")
@@ -85,7 +86,7 @@ homepage_cases.each do |relative_path, heading, expected_title, unexpected_title
   abort "missing rendered homepage: #{relative_path}" unless File.file?(path)
 
   html = File.read(path)
-  document = Nokogiri::HTML(File.read(path))
+  document = Nokogiri::HTML(html)
   section = document.at_css(".editorial-writing")
   abort "homepage writing section is missing: #{relative_path}" unless section
   abort "homepage writing heading is missing: #{relative_path}" unless section.text.include?(heading)
