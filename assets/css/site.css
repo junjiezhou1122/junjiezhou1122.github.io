@@ -24,14 +24,8 @@
   --editorial-gutter: clamp(20px, 4vw, 56px);
   --editorial-radius-sm: 0.5rem;
   --editorial-radius-md: 0.5rem;
-  --editorial-ease: ease;
   --editorial-font: "Hanken Grotesk", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-  --editorial-display: var(--editorial-font);
   color-scheme: light;
-}
-
-body.fixed-top-nav {
-  padding-top: 0 !important;
 }
 
 body {
@@ -65,114 +59,6 @@ body .wechat-dialog-close:focus-visible {
   background: var(--editorial-pill);
 }
 
-#navbar {
-  position: relative !important;
-  min-height: 4.5rem;
-  padding: 0;
-  background: var(--editorial-canvas) !important;
-  border: 0;
-  border-bottom: 1px solid var(--editorial-rule-soft);
-  box-shadow: none;
-}
-
-#navbar .container {
-  display: flex;
-  width: 100%;
-  max-width: var(--editorial-shell);
-  min-height: 4.5rem;
-  padding: 0 var(--editorial-gutter);
-  align-items: center;
-}
-
-#navbar .navbar-brand {
-  flex: 0 0 auto;
-  padding: 0;
-  margin: 0 auto 0 0;
-  color: var(--editorial-ink) !important;
-  font-family: var(--editorial-font);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  text-decoration: none;
-}
-
-#navbar .navbar-collapse {
-  flex-grow: 1;
-}
-
-#navbar .navbar-menu-list {
-  gap: 1rem;
-  margin-left: auto;
-  align-items: center;
-}
-
-#navbar .nav-link {
-  position: relative;
-  padding: 0.8rem 0.25rem !important;
-  color: var(--editorial-ink-soft) !important;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-#navbar .nav-link::after {
-  position: absolute;
-  right: 0.25rem;
-  bottom: 0.35rem;
-  left: 0.25rem;
-  height: 2px;
-  content: "";
-  background: transparent;
-}
-
-#navbar .nav-link:hover,
-#navbar .nav-item.active .nav-link,
-#navbar .nav-link[aria-current="page"] {
-  color: var(--editorial-accent) !important;
-}
-
-#navbar .nav-item.active .nav-link::after,
-#navbar .nav-link[aria-current="page"]::after {
-  background: var(--editorial-accent);
-}
-
-#navbar .toggle-container,
-header progress#progress {
-  display: none !important;
-}
-
-#navbar .navbar-toggler {
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0;
-  margin: 0;
-  border: 1px solid var(--editorial-rule);
-  border-radius: var(--editorial-radius-sm);
-  box-shadow: none;
-}
-
-#navbar .navbar-toggler .icon-bar {
-  width: 1rem;
-  height: 1px;
-  margin-right: auto;
-  margin-left: auto;
-  background: var(--editorial-ink);
-}
-
-body > .container[role="main"] {
-  width: 100%;
-  max-width: none;
-  padding: 0;
-}
-
-/* The theme's important mt-5 utility lives in this cascade layer. */
-@layer components {
-  body > .container[role="main"] {
-    margin-top: 0 !important;
-  }
-}
-
 .editorial-page {
   box-sizing: border-box;
   width: 100%;
@@ -186,7 +72,6 @@ body > .container[role="main"] {
   margin-right: 0;
   margin-left: 0;
 }
-
 
 .section-marker,
 .loop-label,
@@ -288,8 +173,9 @@ body > .container[role="main"] {
   background: var(--editorial-surface-strong);
 }
 
-.editorial-socials i {
-  font-size: 1rem;
+.editorial-socials svg {
+  width: 16px;
+  height: 16px;
 }
 
 .editorial-socials span {
@@ -417,40 +303,11 @@ body > .container[role="main"] {
   white-space: nowrap;
 }
 
-.section-link > span,
-.post-row-action > span {
-  position: relative;
-  width: 0.875rem;
-  height: 0.875rem;
-  color: inherit;
-  font-size: 0;
-  line-height: 0;
+.reading-arrow {
+  width: 14px;
+  height: 14px;
   opacity: 0.75;
-  flex: 0 0 0.875rem;
-}
-
-.section-link > span::before,
-.post-row-action > span::before {
-  position: absolute;
-  top: 50%;
-  right: 1px;
-  left: 1px;
-  content: "";
-  border-top: 1.5px solid currentcolor;
-  transform: translateY(-50%);
-}
-
-.section-link > span::after,
-.post-row-action > span::after {
-  position: absolute;
-  top: 50%;
-  right: 1px;
-  width: 5px;
-  height: 5px;
-  content: "";
-  border-top: 1.5px solid currentcolor;
-  border-right: 1.5px solid currentcolor;
-  transform: translateY(-50%) rotate(45deg);
+  flex: 0 0 14px;
 }
 
 .editorial-blog {
@@ -561,7 +418,20 @@ body > .container[role="main"] {
   align-items: flex-end;
 }
 
-body > .container[role="main"] > .post:not(:has(.editorial-page)) {
+.blog-empty-state {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--editorial-rule-soft);
+}
+
+.blog-empty-state h2 {
+  font-size: 1.5rem;
+}
+
+.blog-empty-state p {
+  color: var(--editorial-ink-soft);
+}
+
+.post {
   box-sizing: border-box;
   width: min(calc(100% - 2 * var(--editorial-gutter)), var(--editorial-reading));
   padding: clamp(40px, 6vw, 72px) 0 6rem;
@@ -614,6 +484,7 @@ body > .container[role="main"] > .post:not(:has(.editorial-page)) {
 }
 
 .post article img,
+.post article video,
 .post article svg {
   max-width: 100%;
 }
@@ -658,22 +529,22 @@ body > .container[role="main"] > .post:not(:has(.editorial-page)) {
   font-size: 1.3125rem;
 }
 
-footer.sticky-bottom {
+.site-footer {
   padding: 3rem 0 2.5rem;
-  margin-top: 0 !important;
+  margin-top: 0;
   color: var(--editorial-rule-soft);
   font-size: 0.9375rem;
   line-height: 1.6;
-  background: var(--editorial-ink) !important;
+  background: var(--editorial-ink);
 }
 
-footer.sticky-bottom .container {
+.site-footer .shell {
   max-width: var(--editorial-shell);
   padding: 0 var(--editorial-gutter);
   color: inherit;
 }
 
-footer.sticky-bottom a {
+.site-footer a {
   color: var(--editorial-rule-soft);
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -721,32 +592,6 @@ footer.sticky-bottom a {
     flex-direction: row;
     gap: 1.25rem;
     align-items: center;
-  }
-}
-
-@media (max-width: 575.98px) {
-  #navbar .container {
-    flex-wrap: wrap;
-  }
-
-  #navbar .navbar-toggler {
-    order: 2;
-  }
-
-  #navbar .navbar-collapse {
-    order: 3;
-    flex-basis: 100%;
-  }
-
-  #navbar .navbar-menu-list {
-    padding: 0.5rem 0 1rem;
-    margin-left: 0;
-    gap: 0.25rem;
-    align-items: stretch;
-  }
-
-  #navbar .nav-link {
-    padding: 0.75rem 0 !important;
   }
 }
 
@@ -820,7 +665,230 @@ footer.sticky-bottom a {
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+}
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+.shell {
+  width: 100%;
+  max-width: var(--editorial-shell);
+  margin: 0 auto;
+  padding: 0 var(--editorial-gutter);
+}
+.site-header {
+  border-bottom: 1px solid var(--editorial-rule-soft);
+}
+.site-header .shell {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-brand {
+  color: var(--editorial-ink);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.site-nav a {
+  position: relative;
+  color: var(--editorial-ink-soft);
+  font-weight: 600;
+  padding: 13px 4px;
+}
+.site-nav a[aria-current="page"] {
+  color: var(--editorial-accent);
+}
+.site-nav a[aria-current="page"]::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  background: currentColor;
+  bottom: 5px;
+  left: 4px;
+  right: 4px;
+}
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--editorial-rule);
+  border-radius: 8px;
+  padding: 8px;
+  color: var(--editorial-ink);
+  background: white;
+  cursor: pointer;
+}
+.menu-toggle svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  padding: 12px;
+  background: white;
+  z-index: 5;
+}
+.skip-link:focus {
+  top: 8px;
+}
+.post-tags a {
+  display: inline-block;
+  margin-right: 8px;
+}
+#giscus_thread {
+  margin-top: 48px;
+}
+@media (max-width: 576px) {
+  .site-header .shell {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 16px;
+  }
+  .site-nav[data-open] {
+    display: flex;
+  }
+  .site-nav a {
+    padding: 12px 0;
+  }
+  .site-nav a[aria-current="page"]::after {
+    right: auto;
+    left: 0;
+    width: 24px;
+  }
+}
+
+.wechat-dialog {
+  width: min(23rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  padding: 0;
+  overflow: auto;
+  color: var(--editorial-ink);
+  font-family: var(--editorial-font);
+  background: var(--editorial-canvas);
+  border: 1px solid var(--editorial-rule);
+  border-radius: var(--editorial-radius-md);
+  box-shadow: 0 24px 64px rgb(0 0 0 / 16%);
+}
+
+.wechat-dialog::backdrop {
+  background: rgb(10 10 10 / 52%);
+}
+
+.wechat-dialog-content {
+  position: relative;
+  padding: 2rem;
+  text-align: left;
+}
+
+.wechat-dialog-content .dialog-kicker {
+  padding-right: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.wechat-dialog-content h2 {
+  margin: 0 0 0.5rem;
+  color: var(--editorial-ink);
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.wechat-dialog-content > p:not(.dialog-kicker) {
+  margin: 0 0 1.5rem;
+  color: var(--editorial-ink-soft);
+  font-size: 0.875rem;
+}
+
+.wechat-dialog-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--editorial-rule);
+  border-radius: var(--editorial-radius-sm);
+}
+
+.wechat-dialog-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  color: var(--editorial-ink);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--editorial-rule);
+  border-radius: 999px;
+  place-items: center;
+}
+
+.wechat-dialog-close:hover,
+.wechat-dialog-close:focus-visible {
+  color: var(--editorial-canvas);
+  background: var(--editorial-ink);
+  border-color: var(--editorial-ink);
+  outline: none;
+}
+
+@media (max-width: 479px) {
+  .wechat-dialog-content {
+    padding: 1.5rem;
+  }
+
+  .wechat-dialog-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wechat-dialog[open] {
+    animation: none;
   }
 }
