@@ -417,6 +417,42 @@ body > .container[role="main"] {
   white-space: nowrap;
 }
 
+.section-link > span,
+.post-row-action > span {
+  position: relative;
+  width: 0.875rem;
+  height: 0.875rem;
+  color: inherit;
+  font-size: 0;
+  line-height: 0;
+  opacity: 0.75;
+  flex: 0 0 0.875rem;
+}
+
+.section-link > span::before,
+.post-row-action > span::before {
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  left: 1px;
+  content: "";
+  border-top: 1.5px solid currentcolor;
+  transform: translateY(-50%);
+}
+
+.section-link > span::after,
+.post-row-action > span::after {
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 5px;
+  height: 5px;
+  content: "";
+  border-top: 1.5px solid currentcolor;
+  border-right: 1.5px solid currentcolor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
 .editorial-blog {
   min-height: calc(100vh - 15rem);
   padding-bottom: 6rem;
