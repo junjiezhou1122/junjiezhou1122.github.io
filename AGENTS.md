@@ -1,106 +1,36 @@
-# Agent Guidelines for al-folio (v1.x)
+# Personal site agent guide
 
-**This file is the authoritative entry point for coding agents working in this repo.** Read it before making any change. It is intentionally short and tool-neutral; it links to the one place each longer-form fact lives.
+This repository owns Junjie Zhou's bilingual personal website. It uses Jekyll 4.4.1 with `jekyll-feed` and `jekyll-sitemap`. It no longer uses al-folio.
 
-`al-folio` v1.x is a **thin Jekyll starter, not a theme**. This repo owns starter wiring, example content, docs, and cross-plugin tests. All runtime — layouts, includes, Sass, Liquid tags, filters, feature JS — lives in versioned gems published under [`al-org-dev`](https://github.com/al-org-dev).
+## Ownership
 
-## Site-specific product direction
+- `site/` is the complete publishable source. Keep tooling, tests, screenshots, audits, and authoring originals outside it.
+- `site/_layouts` owns documents and articles. `site/_includes` owns shared contacts, writing rows, and the WeChat dialog.
+- `site/_data/locales.yml` owns interface translations. `site/_data/socials.yml` owns contact destinations.
+- `site/_posts` owns authored Markdown and metadata. Keep presentation scripts and styles out of post bodies.
+- `site/_plugins/archives.rb` validates source metadata, resolves explicit translation pairs, and generates year, tag, and category archives from posts. It fails on duplicate routes or invalid metadata.
+- `site/assets/css/site.css` owns styling. `site/assets/js/site.js` owns the mobile menu and native QR dialog. There is no asset build pipeline.
 
-This fork is Junjie Zhou's bilingual personal website, not an al-folio demo. Preserve these product decisions when editing personal pages:
+## Product contracts
 
-- Public navigation is intentionally limited to About and Blog, with equivalent English and Chinese routes.
-- The visual language follows the academic profile style of wenhaochai.com. Use self-hosted Hanken Grotesk sans typography, a white canvas, Google blue links, grey text and hairline dividers, pale blue accents, and an 1180px outer shell with responsive gutters. Keep articles within a 720px reading measure and avoid decorative motion.
-- About opens with a square portrait and visible contact links in a left profile sidebar, with the name and biography on the right. On mobile the portrait sits beside the name, followed by contacts and biography. Keep the English and Chinese profile structures equivalent.
-- Humanive is presented as Junjie's long-term direction, not as a separate company or a finished product.
-- The About homepage may surface a short, language-matched preview of recent first-party writing; keep it data-driven from `_posts` and link to the full Blog archive rather than adding generic demo content.
-- The Blog archive opens with a visible bilingual title and description, uses sans headings, compact chronological rows, and explicit Read/阅读 actions; individual post titles and section headings use the same sans family.
-- Blog empty states are intentional. Do not restore sample posts, featured cards, tag clouds, or generic template scaffolding.
-- Every blog post uses Giscus for public feedback by default; keep the repository-wide post default and its rendered-page integration coverage intact.
-- GitHub, X, and WeChat remain peer contact actions; WeChat opens the local QR-code dialog.
+Keep About and Blog as the only navigation sections, in English and Chinese. Keep the academic profile design, self-hosted Hanken Grotesk, white canvas, blue links, grey text, thin dividers, 1180px shell, and 720px article measure. Mobile places the portrait beside the name. Reading actions use the small blue SVG right arrow.
 
-## Route your change
+Humanive is a long-term direction. Preserve authored copy and intentional empty states. Home writing previews derive from the current locale's posts. A `translation_key` connects exactly two real counterparts. An article without a translation has no language alternative.
 
-Find your change on the left; edit only what is on the right.
+Keep explicit post permalinks and existing archive paths. Giscus uses strict pathname mapping and the repository/category identifiers in `_config.yml`. Changing these can detach existing discussions. WeChat fetches its QR only on activation and supports Escape, backdrop, close, and focus return. X is `https://x.com/junjiechou1122`.
 
-| Your change                                                                                                              | Goes in                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| Dependency pin, plugin activation, feature flag                                                                          | this repo: `Gemfile` **and** `_config.yml` (both — see below)                                                 |
-| Example/demo content, bibliography, data files                                                                           | this repo: `_pages`, `_posts`, `_projects`, `_news`, `_teachings`, `_books`, `_data`                          |
-| Documentation                                                                                                            | this repo: `docs/` (long-form) or this file (agent rules)                                                     |
-| Cross-plugin integration test, visual parity test                                                                        | this repo: `test/integration_*.sh`, `test/visual/`                                                            |
-| Plugin catalog metadata                                                                                                  | this repo: `_data/featured_plugins.yml`                                                                       |
-| A layout, include, or Sass partial                                                                                       | the owning gem — start with `al_folio_core`                                                                   |
-| A Liquid tag or filter, or what a tag renders                                                                            | the gem that registers it — see the [delegation table](docs/ARCHITECTURE.md#wrapper-to-tag-to-gem-delegation) |
-| Feature behavior (search, math, charts, comments, cookies, icons, CV, distill, analytics, images, newsletter, citations) | that feature's gem — see [`docs/BOUNDARIES.md`](docs/BOUNDARIES.md)                                           |
-| Component/unit test for gem-owned behavior                                                                               | the owning gem, not here                                                                                      |
-| A feature with no existing owner                                                                                         | open a plugin proposal issue first, then a standalone plugin repo                                             |
+## Work and checks
 
-[`docs/BOUNDARIES.md`](docs/BOUNDARIES.md) is the authoritative area-to-gem table. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) explains how the pieces connect.
+Create a branch before large refactors. Fix causes and fail with file/context on invalid input. Keep this guide aligned with architecture changes.
 
-## Stop sign
+Use Ruby 3.3.5 and Node 24. Install with `bundle install` and `npm ci`. Run:
 
-**If your change would create any of these paths in this repo, it belongs in a gem instead:**
-
-```
-_layouts/   _includes/   _sass/   _scripts/   assets/tailwind/   tailwind.config.js   assets/webfonts/
-```
-
-`npm run lint:style-contract` fails CI when any of them exists here, and it also rejects `build:css` / `build:tailwind` npm scripts. Do not add a starter-local Tailwind or CSS build pipeline.
-
-This restriction applies to **this repo only**. A user's own site created from this template _may_ legally shadow gem-owned files — see [local overrides: your site vs. this repo](docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo).
-
-## Three failures that produce no error message
-
-Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#failure-modes-that-produce-no-error-message) for the full explanation. The short version:
-
-1. **Features fail silently.** A feature renders only when its gem is loaded _and_ its flag is on _and_ the page opts in. Otherwise the Liquid tag emits an empty string — no warning, no error.
-2. **`Gemfile` and `_config.yml` are two lists that must agree.** A plugin in only one of them is inert. Adding or removing a plugin means editing both. Repo dirs use hyphens (`al-folio-core`); gem/plugin ids use underscores (`al_folio_core`).
-3. **This personal site has an empty `baseurl`.** `_config.yml` serves the domain root, so use `bundle exec jekyll build` without a baseurl override. The development server is at `http://localhost:4000/`. The `/al-folio` baseurl in upstream template documentation does not apply to this site.
-
-## Validated local command set
-
-Run from the repo root, in this order:
-
-```bash
-bundle install
-npm ci
+```sh
 npm run lint:prettier
-npm run lint:style-contract
 bundle exec jekyll build
-bash test/integration_comments.sh
-bash test/integration_plugin_toggles.sh
-bash test/integration_distill.sh
-bash test/integration_bootstrap_compat.sh
-bash test/integration_upgrade_cli.sh
-bash test/integration_css_minify.sh
-bash test/integration_new_plugins.sh
-bash test/integration_personal_blog.sh
+npm run test:site
 npx playwright install chromium webkit
-npm run test:visual
-bundle exec al-folio upgrade audit
-bundle exec al-folio upgrade overrides audit
-bundle exec al-folio upgrade report
-docker compose up -d
-curl -fsS http://127.0.0.1:8080/ >/dev/null
-docker compose logs --tail=80
-docker compose down
+npm run test:browser
 ```
 
-All eight `test/integration_*.sh` scripts are gated by `unit-tests.yml`; run the ones your change touches. Docker note: v1 uses `/srv/jekyll/bin/entry_point.sh` and serves from container-local `/tmp/_site` to avoid host bind-mount write deadlocks.
-
-## Before you open a PR
-
-- Keep starter work here; route runtime behavior to the owning plugin repo.
-- Run `npm run lint:prettier` (Prettier with `@shopify/prettier-plugin-liquid`, `printWidth: 150`). `npx prettier . --write` fixes formatting.
-- Keep docs aligned with v1 ownership, and keep each fact in one place — link rather than restate.
-- If you create or keep local overrides of plugin-owned files, run `bundle exec al-folio upgrade overrides audit` and commit `.al-folio-overrides.yml` after review.
-
-## Further reading
-
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the starter and gems fit together, silent failure modes, the v1 config contract, local overrides.
-- [`docs/BOUNDARIES.md`](docs/BOUNDARIES.md) — authoritative area-to-gem ownership table and PR triage playbook.
-- [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) — contributor workflow and agent tooling.
-- [`docs/README.md`](docs/README.md) — index of all user and maintainer guides.
-- `.agents/skills/al-folio-bootstrap/SKILL.md` — new-site setup workflow.
-- `.agents/skills/al-folio-v1-migration/SKILL.md` — customized-fork migration and override drift auditing.
-- `.codex/skills` and `.claude/skills` are symlinks to `.agents/skills` for agent-specific discovery.
+The site serves the domain root with an empty `baseurl`. Do not pass `/al-folio`. Preview with `bundle exec jekyll serve` at `http://localhost:4000/`. The site workflow validates pull requests and deploys validated `main` builds to the existing `gh-pages` branch.

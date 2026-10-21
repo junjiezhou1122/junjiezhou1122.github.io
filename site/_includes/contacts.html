@@ -1,0 +1,16 @@
+{% assign locale = site.data.locales[page.lang] %}
+<nav class="contact-icons editorial-socials" aria-label="{{ locale.socials }}">
+  {% for social in site.data.socials %}
+    {% if social.id == 'wechat' %}
+      <a href="{{ social.url }}" aria-label="{{ locale.qr_open }}" aria-haspopup="dialog" aria-controls="wechat-qr-dialog">
+        {%- include icon.html name=social.id -%}
+        <span>{{ locale.wechat }}</span></a
+      >
+    {% else %}
+      <a href="{{ social.url }}" aria-label="{{ social.label }}" rel="external nofollow noopener" target="_blank">
+        {%- include icon.html name=social.id -%}
+        <span>{{ social.label }}</span></a
+      >
+    {% endif %}
+  {% endfor %}
+</nav>

@@ -1,0 +1,8 @@
+- id: github
+  label: GitHub
+  url: https://github.com/junjiezhou1122
+- id: x
+  label: X
+  url: https://x.com/junjiechou1122
+- id: wechat
+  url: "#wechat-qr-dialog"

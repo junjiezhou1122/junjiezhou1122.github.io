@@ -1,0 +1,71 @@
+{% assign asset_version = site.time | date: '%Y%m%d%H%M%S' %}
+{% assign locale = site.data.locales[page.lang] %}
+<!doctype html>
+<html lang="{{ page.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.section == 'about' %}{{ locale.name }}{% else %}{{ page.title | escape }} | {{ site.title }}{% endif %}
+    </title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="keywords" content="{{ site.keywords | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {% for alternate in page.translations %}
+      <link rel="alternate" hreflang="{{ alternate.lang }}" href="{{ alternate.url | absolute_url }}">
+    {% endfor %}
+    {% feed_meta %}
+    <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="preload" href="{{ '/assets/fonts/HankenGrotesk-Variable.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ asset_version }}">
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ asset_version }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{{ locale.skip }}</a>
+    <header class="site-header">
+      <div class="shell">
+        <a class="site-brand" href="{{ locale.about_url | relative_url }}">{{ locale.name }}</a>
+        <button class="menu-toggle" type="button" aria-label="{{ locale.menu }}" aria-controls="site-nav" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="{{ locale.menu }}">
+          <a
+            href="{{ locale.about_url | relative_url }}"
+            {% if page.section == 'about' %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- locale.about -}}
+          </a>
+          <a
+            href="{{ locale.blog_url | relative_url }}"
+            {% if page.section == 'blog' %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- locale.blog -}}
+          </a>
+          {% for alternate in page.translations -%}
+            {%- unless alternate.lang == page.lang -%}
+              <a
+                class="language-switcher"
+                href="{{ alternate.url | relative_url }}"
+                lang="{{ alternate.lang }}"
+                hreflang="{{ alternate.lang }}"
+              >
+                {{- site.data.locales[alternate.lang].switch_label -}}
+              </a>
+            {%- endunless -%}
+          {%- endfor %}
+        </nav>
+      </div>
+    </header>
+    <main id="main">{{ content }}</main>
+    <footer class="site-footer">
+      <div class="shell">© {{ site.time | date: '%Y' }} Junjie Zhou. Keep curious. Build for humans.</div>
+    </footer>
+  </body>
+</html>

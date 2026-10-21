@@ -1,0 +1,324 @@
+[
+  {
+    "width": 1280,
+    "path": "/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "46px",
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "portrait": {
+      "x": 101.1875,
+      "y": 145,
+      "width": 290,
+      "height": 290,
+      "top": 145,
+      "right": 391.1875,
+      "bottom": 435,
+      "left": 101.1875
+    },
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 1280,
+      "height": 1911.6875,
+      "top": 73,
+      "right": 1280,
+      "bottom": 1984.6875,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 1280,
+    "path": "/zh/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "46px",
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "portrait": {
+      "x": 101.1875,
+      "y": 145,
+      "width": 290,
+      "height": 290,
+      "top": 145,
+      "right": 391.1875,
+      "bottom": 435,
+      "left": 101.1875
+    },
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 1280,
+      "height": 1822.734375,
+      "top": 73,
+      "right": 1280,
+      "bottom": 1895.734375,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 1280,
+    "path": "/blog/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "46px",
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 1280,
+      "height": 854.703125,
+      "top": 73,
+      "right": 1280,
+      "bottom": 927.703125,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 1280,
+    "path": "/zh/blog/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "46px",
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 1280,
+      "height": 708.828125,
+      "top": 73,
+      "right": 1280,
+      "bottom": 781.828125,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 1280,
+    "path": "/blog/2026/no-history-no-personal-ai/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "46px",
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 1280,
+      "height": 6933,
+      "top": 73,
+      "right": 1280,
+      "bottom": 7006,
+      "left": 0
+    },
+    "prose": {
+      "x": 280,
+      "y": 345.375,
+      "width": 720,
+      "height": 6516.625,
+      "top": 345.375,
+      "right": 1000,
+      "bottom": 6862,
+      "left": 280
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234",
+      "https://giscus.app/client.js"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "34px",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "portrait": {
+      "x": 20,
+      "y": 113,
+      "width": 94,
+      "height": 94,
+      "top": 113,
+      "right": 114,
+      "bottom": 207,
+      "left": 20
+    },
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 390,
+      "height": 2703.125,
+      "top": 73,
+      "right": 390,
+      "bottom": 2776.125,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/zh/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "34px",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "portrait": {
+      "x": 20,
+      "y": 113,
+      "width": 94,
+      "height": 94,
+      "top": 113,
+      "right": 114,
+      "bottom": 207,
+      "left": 20
+    },
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 390,
+      "height": 2441.75,
+      "top": 73,
+      "right": 390,
+      "bottom": 2514.75,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/blog/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "34px",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 390,
+      "height": 1335.5,
+      "top": 73,
+      "right": 390,
+      "bottom": 1408.5,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/zh/blog/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "34px",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 390,
+      "height": 1023.953125,
+      "top": 73,
+      "right": 390,
+      "bottom": 1096.953125,
+      "left": 0
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  },
+  {
+    "width": 390,
+    "path": "/blog/2026/no-history-no-personal-ai/",
+    "font": "\"Hanken Grotesk\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", Arial, sans-serif",
+    "canvas": "rgb(255, 255, 255)",
+    "ink": "rgb(32, 33, 36)",
+    "h1": "34px",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "main": {
+      "x": 0,
+      "y": 73,
+      "width": 390,
+      "height": 11117.890625,
+      "top": 73,
+      "right": 390,
+      "bottom": 11190.890625,
+      "left": 0
+    },
+    "prose": {
+      "x": 20,
+      "y": 359.953125,
+      "width": 350,
+      "height": 10686.9375,
+      "top": 359.953125,
+      "right": 370,
+      "bottom": 11046.890625,
+      "left": 20
+    },
+    "scripts": [
+      "http://127.0.0.1:4173/assets/js/site.js?v=20261021111234",
+      "https://giscus.app/client.js"
+    ],
+    "styles": [
+      "http://127.0.0.1:4173/assets/css/site.css?v=20261021111234"
+    ]
+  }
+]

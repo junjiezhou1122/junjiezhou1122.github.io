@@ -1,0 +1,79 @@
+{% assign locale = site.data.locales[page.lang] %}
+{% assign writing_posts = site.posts | where: 'lang', page.lang %}
+{% if page.archive_posts -%}
+  {%- assign writing_posts = page.archive_posts -%}
+{%- endif %}
+{% if include.home %}
+  {% assign writing_posts = writing_posts | slice: 0, 3 %}
+  <section class="editorial-writing" aria-labelledby="writing-title">
+    <header class="section-header">
+      <h2 id="writing-title">{{ locale.recent }}</h2>
+      <a class="section-link" href="{{ locale.blog_url | relative_url }}">
+        {{- locale.all_writing }}
+        {% include icon.html name='arrow' -%}
+      </a>
+    </header>
+{% endif %}
+<div class="editorial-post-list {% if include.home %}home-post-list{% endif %}">
+  {% for post in writing_posts %}
+    {% assign post_locale = site.data.locales[post.lang] %}
+    {% assign read_time = post.content | number_of_words: 'cjk' | divided_by: post_locale.words_per_minute | plus: 1 %}
+    <article class="editorial-post-row {% if include.home %}home-post-row{% endif %}" lang="{{ post.lang }}">
+      {% if include.home -%}
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: post_locale.date_format }}</time>
+      {%- endif %}
+      <div class="post-row-copy">
+        {% unless include.home -%}
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: post_locale.date_format }}</time>
+        {%- endunless %}
+        {% if include.home %}
+          <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+        {% else %}
+          <h2>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+        {% endif %}
+        <p>{{ post.description | escape }}</p>
+        {% unless include.home %}
+          <div class="post-row-footer">
+        {% endunless %}
+        <span>
+          {{- post_locale.read_prefix -}}
+          {{- read_time }}
+          {{ post_locale.read_time -}}
+        </span>
+        {% unless include.home -%}
+          <a
+            class="post-row-action"
+            href="{{ post.url | relative_url }}"
+            aria-label="{{ post_locale.read }} {{ post.title | escape }}"
+          >
+            {{- post_locale.read }}
+            {% include icon.html name='arrow' -%}
+          </a>
+          </div>
+        {% endunless %}
+      </div>
+      {% if include.home -%}
+        <a
+          class="post-row-action"
+          href="{{ post.url | relative_url }}"
+          aria-label="{{ post_locale.read }} {{ post.title | escape }}"
+        >
+          {{- post_locale.read }}
+          {% include icon.html name='arrow' -%}
+        </a>
+      {%- endif %}
+    </article>
+  {% else %}
+    <div class="blog-empty-state">
+      <h2>{{ locale.empty_title }}</h2>
+      <p>{{ locale.empty_note }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% if include.home %}
+  </section>
+{% endif %}

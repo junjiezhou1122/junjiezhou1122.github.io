@@ -1,0 +1,54 @@
+{
+  "baseline_commit": "b714e17b36a801e6c0693f5d1793c1c661bc71fa",
+  "posts": [
+    {
+      "file": "_posts/2026-08-26-no-history-no-personal-ai-zh.md",
+      "title": "没有你的历史，AI 就不可能真正懂你",
+      "route": "/zh/blog/2026/no-history-no-personal-ai/",
+      "lang": "zh-CN",
+      "body_sha256": "eb8cd9bf1e5ec66e5eea4aa803b2d95bf0c01c4b7c4332ee4bf923b0e849b735"
+    },
+    {
+      "file": "_posts/2026-08-26-no-history-no-personal-ai.md",
+      "title": "No History, No Personal AI",
+      "route": "/blog/2026/no-history-no-personal-ai/",
+      "lang": "en",
+      "body_sha256": "9762283f4e814065cd52f05123651dd4136745db8f22d06050cc7bb97b3c34ce"
+    },
+    {
+      "file": "_posts/2026-08-26-the-network-comes-later-zh.md",
+      "title": "关系不是起点",
+      "route": "/zh/blog/2026/the-network-comes-later/",
+      "lang": "zh-CN",
+      "body_sha256": "3ce143a15453decdb823c47ab8a82c9e3f0f38835ae18f07fb98331766b66799"
+    },
+    {
+      "file": "_posts/2026-08-26-the-network-comes-later.md",
+      "title": "The Network Comes Later",
+      "route": "/blog/2026/the-network-comes-later/",
+      "lang": "en",
+      "body_sha256": "0c6e7410ba29b91c4641fc1e9d14277f953ae199c0da90da919d04cf3ef5edc0"
+    },
+    {
+      "file": "_posts/2026-08-30-the-feed-is-not-the-world-zh.md",
+      "title": "信息流不是世界",
+      "route": "/zh/blog/2026/the-feed-is-not-the-world/",
+      "lang": "zh-CN",
+      "body_sha256": "9bc04646de571adb552064bb80792ee320b3daaa47a4d7660ee4019caf8d4cd2"
+    },
+    {
+      "file": "_posts/2026-08-30-the-feed-is-not-the-world.md",
+      "title": "The Feed Is Not the World",
+      "route": "/blog/2026/the-feed-is-not-the-world/",
+      "lang": "en",
+      "body_sha256": "a8dcd94ec09d0d6d85e16603221554fc7c05973fcccd4f5713491e63f55b34bd"
+    },
+    {
+      "file": "_posts/2026-09-20-who-defines-good-for-an-ai-agent.md",
+      "title": "Who Gets to Define ‘Good’ for an AI Agent?",
+      "route": "/blog/2026/who-defines-good-for-an-ai-agent/",
+      "lang": "en",
+      "body_sha256": "5b02cb6ef695aadb7123fed70bf810cfc4b2e1fe6436031f4567b32e09b5f753"
+    }
+  ]
+}

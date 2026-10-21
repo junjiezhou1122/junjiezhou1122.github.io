@@ -1,0 +1,19 @@
+---
+layout: default
+permalink: /zh/blog/
+title: 博客
+lang: zh-CN
+description: 周君杰关于科研、智能体、认知科学、复杂系统与有趣事物的笔记。
+translation_key: blog
+section: blog
+---
+{% assign locale = site.data.locales[page.lang] %}
+
+<div class="editorial-page editorial-blog">
+  <header class="blog-hero">
+    <p class="section-marker">{{ locale.archive_marker }}</p>
+    <h1>{{ locale.blog }}</h1>
+    <p>{{ locale.blog_intro }}</p>
+  </header>
+  {% include writing.html %}
+</div>

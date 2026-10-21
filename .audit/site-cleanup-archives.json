@@ -1,0 +1,156 @@
+[
+  {
+    "route": "/blog/2026/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/",
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/",
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/",
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/category/essays/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/",
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/",
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/",
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/tag/agent-evaluation/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/"
+    ]
+  },
+  {
+    "route": "/blog/tag/ai-agents/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/"
+    ]
+  },
+  {
+    "route": "/blog/tag/benchmarks/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/"
+    ]
+  },
+  {
+    "route": "/blog/tag/coordination/",
+    "posts": [
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/tag/data-infrastructure/",
+    "posts": [
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/"
+    ]
+  },
+  {
+    "route": "/blog/tag/epistemology/",
+    "posts": [
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/"
+    ]
+  },
+  {
+    "route": "/blog/tag/human-behavior/",
+    "posts": [
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/"
+    ]
+  },
+  {
+    "route": "/blog/tag/human-centered-ai/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/",
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/"
+    ]
+  },
+  {
+    "route": "/blog/tag/human-data/",
+    "posts": [
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/"
+    ]
+  },
+  {
+    "route": "/blog/tag/human-interaction/",
+    "posts": [
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/tag/human-model/",
+    "posts": [
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/"
+    ]
+  },
+  {
+    "route": "/blog/tag/networks/",
+    "posts": [
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/tag/observation-distortion/",
+    "posts": [
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/"
+    ]
+  },
+  {
+    "route": "/blog/tag/personal-ai/",
+    "posts": [
+      "/blog/2026/no-history-no-personal-ai/",
+      "/zh/blog/2026/no-history-no-personal-ai/"
+    ]
+  },
+  {
+    "route": "/blog/tag/personalization/",
+    "posts": [
+      "/blog/2026/who-defines-good-for-an-ai-agent/"
+    ]
+  },
+  {
+    "route": "/blog/tag/proof-of-work/",
+    "posts": [
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  },
+  {
+    "route": "/blog/tag/recommendation-systems/",
+    "posts": [
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/"
+    ]
+  },
+  {
+    "route": "/blog/tag/social-media/",
+    "posts": [
+      "/blog/2026/the-feed-is-not-the-world/",
+      "/zh/blog/2026/the-feed-is-not-the-world/"
+    ]
+  },
+  {
+    "route": "/blog/tag/trust/",
+    "posts": [
+      "/blog/2026/the-network-comes-later/",
+      "/zh/blog/2026/the-network-comes-later/"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+---
+layout: default
+permalink: /blog/
+title: blog
+lang: en
+description: Notes from Junjie Zhou on research, agents, cognition, complex systems, and things worth exploring.
+translation_key: blog
+section: blog
+---
+{% assign locale = site.data.locales[page.lang] %}
+
+<div class="editorial-page editorial-blog">
+  <header class="blog-hero">
+    <p class="section-marker">{{ locale.archive_marker }}</p>
+    <h1>{{ locale.blog }}</h1>
+    <p>{{ locale.blog_intro }}</p>
+  </header>
+  {% include writing.html %}
+</div>
