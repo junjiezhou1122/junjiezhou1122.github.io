@@ -20,7 +20,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
       </figure>
       <nav class="contact-icons editorial-socials" aria-label="Social links">
         <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
-        <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+        <a href="https://x.com/junjiechou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
         <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>WeChat</span></a>
       </nav>
     </aside>

@@ -20,7 +20,7 @@ description: 周君杰的个人主页，研究方向包括自动化科研、医�
       </figure>
       <nav class="contact-icons editorial-socials" aria-label="社交链接">
         <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
-        <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+        <a href="https://x.com/junjiechou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
         <a href="#wechat-qr-dialog" title="微信" aria-label="打开微信二维码"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>微信</span></a>
       </nav>
     </aside>
