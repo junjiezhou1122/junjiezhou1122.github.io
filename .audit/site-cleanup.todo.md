@@ -8,9 +8,9 @@
 - [x] Delegate the coupled migration in one exclusive worktree.
 - [x] Verify a clean build, published-file boundary, stable post text and routes, then desktop/mobile functionality.
 - [x] Independent review of final diff and production artifact; fix accepted defects.
-- [ ] Publish through expected-SHA GitHub update, observe deployment and Pages, verify public routes.
+- [x] Publish through expected-SHA GitHub update, observe deployment and Pages, verify public routes.
 - [x] Phase D: Keep the audit trail.
-- [ ] Phase E: Verify and hand back.
+- [x] Phase E: Verify and hand back.
 
 Throughput checkpoint:
 - Blocking first steps: source/dependency/content audits and baseline before migration.

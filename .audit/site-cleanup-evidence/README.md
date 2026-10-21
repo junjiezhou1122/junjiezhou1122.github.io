@@ -18,6 +18,6 @@ The initial independent review found a public-post inventory defect. The final c
 
 CodeQL remains enabled for Ruby and JavaScript. Site CI uses an explicitly supported Ubuntu 24.04 browser image, Ruby 3.3.5 and Node 24, validates before deployment, and deploys the same checked artifact to `gh-pages`.
 
-Browser regression tests stub the remote Giscus client. The generated identity attributes are checked, but actual widget delivery and public CDN behavior require the post-deployment live pass. The committed record at this stage therefore records release readiness, not a future deployment result. Actual release and Pages run URLs will be appended after they exist.
+Browser regression tests stub the remote Giscus client. The generated identity attributes are checked, but actual widget delivery and public CDN behavior require the post-deployment live pass. The release outcome is now recorded in `release.json`: Site validation/deployment and Pages succeeded, all retained routes and expected retired/private 404s were checked, and the real English/Chinese Giscus composers loaded without JavaScript errors.
 
 The separate audit reviewer flagged stale checklists, temporary evidence paths, and missing before/after visual evidence during the ongoing run. This folder and the updated decision trail resolve those evidence gaps. Review sessions are independent of implementation; no cross-provider model-voting claim is made.

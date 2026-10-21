@@ -1,0 +1,40 @@
+{
+  "source_commit": "645331bd8c4ea43aafbd78abc893cda1317fbee4",
+  "verified_tree": "3f085aaeb6fb987168a16d4fefb64af8526885fc",
+  "site_workflow": {
+    "id": 39540583336,
+    "url": "https://github.com/junjiezhou1122/junjiezhou1122.github.io/actions/runs/39540583336",
+    "validate": "success",
+    "deploy": "success"
+  },
+  "pages": {
+    "commit": "cf51adfa537284bf0c24e54e938cde74836af34e",
+    "workflow_id": 39540744772,
+    "url": "https://github.com/junjiezhou1122/junjiezhou1122.github.io/actions/runs/39540744772",
+    "status": "success"
+  },
+  "public_url": "https://junjiezhou1122.github.io/",
+  "checks": {
+    "retained_routes_and_files": 36,
+    "retired_demo_routes_404": 35,
+    "private_tool_paths_404": 3,
+    "atom_entries": 7,
+    "sitemap_urls": 32,
+    "live_ui_cases": 14,
+    "browser_regression_cases": 48,
+    "source_output_assertions_with_fixtures": 953,
+    "unchanged_post_bodies_and_metadata": 7,
+    "unchanged_archive_memberships": 21,
+    "unchanged_biographies_and_humanive_locales": 2,
+    "real_giscus_composers": [
+      "en",
+      "zh-CN"
+    ],
+    "giscus_widget_javascript_errors": 0
+  },
+  "instrument_notes": [
+    "First raw urllib concurrent probe encountered an SSL EOF; a recorded curl pass with bounded transport retry verified every expected status.",
+    "First widget probe read the iframe URL before navigation. Waiting for actual frame content verified both real composers without a product-code change."
+  ],
+  "recorded_at": "2026-10-21T04:00:11.386180+00:00"
+}
