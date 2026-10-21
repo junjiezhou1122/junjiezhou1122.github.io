@@ -9,11 +9,11 @@
 This fork is Junjie Zhou's bilingual personal website, not an al-folio demo. Preserve these product decisions when editing personal pages:
 
 - Public navigation is intentionally limited to About and Blog, with equivalent English and Chinese routes.
-- The visual language is a quiet, monochrome technology-editorial system: a 720px reading measure, generous whitespace, hairline dividers, restrained rounding, and almost no decorative motion.
-- About opens directly with the introduction copy on the left and the portrait on the right. Do not restore a separate name-and-tagline hero.
+- The visual language follows the academic profile style of wenhaochai.com. Use self-hosted Hanken Grotesk sans typography, a white canvas, Google blue links, grey text and hairline dividers, pale blue accents, and an 1180px outer shell with responsive gutters. Keep articles within a 720px reading measure and avoid decorative motion.
+- About opens with a square portrait and visible contact links in a left profile sidebar, with the name and biography on the right. On mobile the portrait sits beside the name, followed by contacts and biography. Keep the English and Chinese profile structures equivalent.
 - Humanive is presented as Junjie's long-term direction, not as a separate company or a finished product.
 - The About homepage may surface a short, language-matched preview of recent first-party writing; keep it data-driven from `_posts` and link to the full Blog archive rather than adding generic demo content.
-- The Blog archive opens with a visible bilingual title and description, uses serif display headings, compact chronological rows, and explicit Read/阅读 actions; individual post titles and section headings share the same display face.
+- The Blog archive opens with a visible bilingual title and description, uses sans headings, compact chronological rows, and explicit Read/阅读 actions; individual post titles and section headings use the same sans family.
 - Blog empty states are intentional. Do not restore sample posts, featured cards, tag clouds, or generic template scaffolding.
 - Every blog post uses Giscus for public feedback by default; keep the repository-wide post default and its rendered-page integration coverage intact.
 - GitHub, X, and WeChat remain peer contact actions; WeChat opens the local QR-code dialog.
@@ -55,7 +55,7 @@ Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#failure-modes-that-produce-no
 
 1. **Features fail silently.** A feature renders only when its gem is loaded _and_ its flag is on _and_ the page opts in. Otherwise the Liquid tag emits an empty string — no warning, no error.
 2. **`Gemfile` and `_config.yml` are two lists that must agree.** A plugin in only one of them is inert. Adding or removing a plugin means editing both. Repo dirs use hyphens (`al-folio-core`); gem/plugin ids use underscores (`al_folio_core`).
-3. **This repo's effective baseurl is `/al-folio`.** `_config.yml` already sets it, so a plain `bundle exec jekyll build` is correct — that is what `deploy.yml`, `broken-links-site.yml` and `axe.yml` run. Passing `--baseurl /al-folio` is redundant but harmless; blanking the baseurl out is what renders the site unstyled with broken links. Dev server is at `http://localhost:4000/al-folio/`.
+3. **This personal site has an empty `baseurl`.** `_config.yml` serves the domain root, so use `bundle exec jekyll build` without a baseurl override. The development server is at `http://localhost:4000/`. The `/al-folio` baseurl in upstream template documentation does not apply to this site.
 
 ## Validated local command set
 
@@ -66,7 +66,7 @@ bundle install
 npm ci
 npm run lint:prettier
 npm run lint:style-contract
-bundle exec jekyll build --baseurl /al-folio
+bundle exec jekyll build
 bash test/integration_comments.sh
 bash test/integration_plugin_toggles.sh
 bash test/integration_distill.sh
@@ -81,7 +81,7 @@ bundle exec al-folio upgrade audit
 bundle exec al-folio upgrade overrides audit
 bundle exec al-folio upgrade report
 docker compose up -d
-curl -fsS http://127.0.0.1:8080/al-folio/ >/dev/null
+curl -fsS http://127.0.0.1:8080/ >/dev/null
 docker compose logs --tail=80
 docker compose down
 ```

@@ -14,32 +14,29 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
 
 <div class="editorial-page editorial-about">
   <section class="about-introduction" aria-labelledby="introduction-title">
+    <aside class="about-profile" aria-label="Profile and contact links">
+      <figure class="about-portrait">
+        <img src="{{ '/assets/img/junjie-profile-800.webp' | relative_url }}" srcset="{{ '/assets/img/junjie-profile-480.webp' | relative_url }} 480w, {{ '/assets/img/junjie-profile-800.webp' | relative_url }} 800w" sizes="(max-width: 860px) 128px, 290px" alt="Portrait of Junjie Zhou" width="1086" height="1448" loading="eager" fetchpriority="high">
+      </figure>
+      <nav class="contact-icons editorial-socials" aria-label="Social links">
+        <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+        <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
+        <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>WeChat</span></a>
+      </nav>
+    </aside>
     <div class="about-introduction-main">
-      <p class="section-marker">About · 01</p>
+      <h1 class="introduction-lead" id="introduction-title">Junjie Zhou</h1>
       <div class="introduction-copy">
-        <h1 class="introduction-lead" id="introduction-title">Junjie Zhou</h1>
         <p class="introduction-role">Researching Auto Research, AI for Medicine, and human-centered AI.</p>
         <p>I earned my bachelor’s degree in <strong>Computer Science and Technology</strong> from Anhui Jianzhu University and am pursuing a master’s degree in <strong>Intelligent Science and Technology</strong> at Hangzhou Dianzi University.</p>
         <p>My research focuses on <strong>Auto Research</strong> and <strong>AI for Medicine (AI4Med)</strong>. I’m also drawn to long-running agents, cognitive science, complex systems, and all the interesting things in the world.</p>
         <p>I believe in staying curious—and turning that curiosity into things worth building.</p>
-
-        <nav class="contact-icons editorial-socials" aria-label="Social links">
-          <a href="https://github.com/junjiezhou1122" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
-          <a href="https://x.com/junjiezhou1122" title="X" aria-label="X" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span>X</span></a>
-          <a href="#wechat-qr-dialog" title="WeChat" aria-label="Open WeChat QR code"><i class="fa-brands fa-weixin" aria-hidden="true"></i><span>WeChat</span></a>
-        </nav>
       </div>
     </div>
-
-    <figure class="about-portrait">
-      <img src="{{ '/assets/img/junjie-profile-800.webp' | relative_url }}" srcset="{{ '/assets/img/junjie-profile-480.webp' | relative_url }} 480w, {{ '/assets/img/junjie-profile-800.webp' | relative_url }} 800w" sizes="(max-width: 767px) 280px, 288px" alt="Portrait of Junjie Zhou" width="1086" height="1448" loading="eager" fetchpriority="high">
-    </figure>
-
   </section>
 
   <section class="humanive" aria-labelledby="humanive-title">
     <header class="humanive-header editorial-reading-column">
-      <p class="section-marker">Ongoing direction · 02</p>
       <h2 id="humanive-title">Humanive</h2>
       <p class="humanive-tagline">Infrastructure for humans in the age of AI.</p>
       <p>AI should not only become more capable. It should help <strong>humans become more capable</strong>.</p>
@@ -48,17 +45,14 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
 
     <div class="humanive-directions" aria-label="Humanive directions">
       <article class="direction-row">
-        <span class="direction-number" aria-hidden="true">01</span>
         <h3>Understand Human</h3>
         <p>Build useful representations of a person’s goals, knowledge, context, patterns, strengths, and blind spots.</p>
       </article>
       <article class="direction-row">
-        <span class="direction-number" aria-hidden="true">02</span>
         <h3>Develop Human</h3>
         <p>Help people learn more effectively, understand more deeply, improve judgment, and strengthen metacognition.</p>
       </article>
       <article class="direction-row">
-        <span class="direction-number" aria-hidden="true">03</span>
         <h3>Extend Human</h3>
         <p>Expand what a person can research, create, organize, communicate, coordinate, and accomplish.</p>
       </article>
@@ -77,8 +71,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
   <section class="editorial-writing" aria-labelledby="writing-title">
     <header class="section-header editorial-reading-column">
       <div>
-        <p class="section-marker">Writing · 03</p>
-        <h2 id="writing-title">Recent notes</h2>
+          <h2 id="writing-title">Recent notes</h2>
       </div>
       <a class="section-link" href="{{ '/blog/' | relative_url }}">All writing <span aria-hidden="true">↗</span></a>
     </header>
@@ -93,9 +86,7 @@ description: Junjie Zhou researches Auto Research, AI for Medicine, long-running
             {% if post.description %}<p>{{ post.description }}</p>{% endif %}
             <span>{{ read_time }} min read</span>
           </div>
-          <svg class="post-row-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path d="M3 13 13 3M6 3h7v7" />
-          </svg>
+          <a class="post-row-action" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read <span aria-hidden="true">↗</span></a>
         </article>
       {% endfor %}
     </div>

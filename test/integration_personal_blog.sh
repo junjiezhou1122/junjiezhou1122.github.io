@@ -87,10 +87,20 @@ homepage_cases.each do |relative_path, heading, expected_title, unexpected_title
 
   html = File.read(path)
   document = Nokogiri::HTML(html)
+  profile = document.at_css(".about-profile")
+  abort "homepage profile sidebar is missing: #{relative_path}" unless profile
+  abort "homepage profile portrait is missing: #{relative_path}" unless profile.at_css(".about-portrait img")
+  contacts = profile.css("nav.editorial-socials a")
+  abort "homepage profile contact actions are missing: #{relative_path}" unless contacts.length == 3
+  abort "homepage contact labels are missing: #{relative_path}" unless contacts.all? { |contact| !contact.at_css("span")&.text.to_s.empty? }
+  abort "homepage name must appear once: #{relative_path}" unless document.css("#introduction-title").length == 1
+  abort "homepage name is nested in biography: #{relative_path}" if document.at_css(".introduction-copy h1")
+  abort "homepage WeChat contact is missing: #{relative_path}" unless profile.at_css('a[href="#wechat-qr-dialog"]')
   section = document.at_css(".editorial-writing")
   abort "homepage writing section is missing: #{relative_path}" unless section
   abort "homepage writing heading is missing: #{relative_path}" unless section.text.include?(heading)
   abort "homepage has no recent writing rows: #{relative_path}" if section.css(".home-post-row").empty?
+  abort "homepage recent writing read actions are missing: #{relative_path}" unless section.css(".post-row-action").length == section.css(".home-post-row").length
   abort "homepage recent writing link is missing: #{relative_path}" unless section.at_css("a.section-link")
   abort "homepage contains a post from the wrong language: #{relative_path}" if section.text.include?(unexpected_title)
   abort "homepage expected recent post is missing: #{relative_path}" unless section.text.include?(expected_title)
